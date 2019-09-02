@@ -24,20 +24,10 @@ body {
     background-position: center;
     background-size: cover;
     height: 100vh;
+   
 }
 
-/* .first-tittle{
-    font-family: Sacramento;
-    font-size: 9em;
-    margin-top: -20px;
-}
 
-.second-tittle{
-    font-family: Glacial;
-    font-size: 2em;
-    margin-top: -40px;
-    line-height: 1em;
-} */
 
 .img-bg img {
     position: relative;
@@ -45,133 +35,98 @@ body {
     height: 100%;
 }
 
-/* .logos-store {
-    margin-top: 3em;
-    text-align: center;
-    margin-left: -65px;
-}
-
-.logos-store img{
-    width: 65%;
-}
-
-.logos-store div p {
-    font-family: Bebas;
-    text-align: center;
-} */
-
-/* .mock {
-    max-width: 60em;
-    margin: 40px;
-    padding: 0.5em;
-}
-
-#header .logo {
-    max-width: 35em;
-    margin-left: 50px;
-} 
-
-
-.footer-img-sec1 a img {
-    width: 10%;
-}
- */
-
-
-
-
-/* .flags a img {
-    width: 4%;
-    padding: 0.2em;
-}
-
-.flags a {
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-}
-
-
-
-.flags-sec1 {
-    width: 100vw;
-    height: 5vh;
-}
-
-
-
-.content-sec1 {
-    
-    height: 90vh;
-}
-
-.footer-sec1 {
-    
-    height: 5vh;
-} */
-
-
-.sec1 {
-    max-width: 100%;
-}
-
-.footer-sec1 div {
-    width: 100vw;
-}
-
-.flag-sec1 {
-    height: 7vh;
-}
-
-.flag-sec1 a img {
-    width: 4%;
-    margin: 20px 10px 10px 10px;
-}
-
-.content-sec1 {
-    height: 86vh;
-}
-
-.footer-sec1 {
-    height: 7vh;
-}
-.footer-sec1 a img {
-   width: 3%;
-   margin: 3px;
-}
-
-.left-part {
-    height: 86vh;
-}
-
-.mock img {
-   width: 60%;
-}
-
-.logo img {
-    width: 60%;
-}
-
-.center-part {
-    flex-direction: column;
-    margin-top: 6em;
+#header {
+    background-image: url(../imagens/bg-main.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
 }
 
 .first-tittle {
     font-family: Sacramento;
     color: #fff;
     font-size: 9em;
-    margin-bottom: -0.3em;
+    margin-bottom: 0.2em;  
 }
 
-.second-tittle {
+.second-tittle{
     font-family: Glacial;
     color: #fff;
-    font-size: 2em;
+    font-size: 3em;
+    margin-top: -40px;
+    line-height: 1.1em;
+} 
+
+
+.img-bg img {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
+
+.logos-store {
+    margin-top: 3em;
+    text-align: center;
+    margin-left: -65px;
+}
+
+.logos-store div p {
+    font-family: Bebas;
+    text-align: center;
+    font-size: 1.5em;
+} 
+
+.mock {
+    max-width: 40em;
+    margin: 40px;
+    padding: 0.5em;
+}
+
+#header .logo {
+    max-width: 20em;
+    margin-left: 8em;
+} 
+
+#app-store {
+    margin-left: -6em;
+}
+
+.footer-img-sec1 a img {
+    width: 10%;
+}
+
+.img-flags {
+    margin: 1em 1em 0 0;
+}
+
+.flags a img {
+    width: 4%;
+    padding: 0.2em;
+}
+
+.img-arrow {
+    width: 10%;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 10px;
+    width: 50px;
+    position: absolute;
+}
+
+.content {
+    margin-top: 7em;
+}
+
+.mock img {
+   width: 70%;
+   height: 70%;
+}
+
 .logos-store img{
-    width: 25%;
-    margin-right: 1em;
+    width: 50%;
 }
 
 .logos-store div p {
@@ -179,21 +134,6 @@ body {
     text-align: center;
     color: #fff;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 /* Seção 2 */
@@ -312,15 +252,7 @@ div.textos-dir {
     margin-top: 2em;
 }
 
-/* .control-icon-next {
-    background-image: url(../imagens/right-row.png);
-    height: 2em;
-}
 
-.control-icon-prev {
-    background-image: url(../imagens/left-row.png);
-    height: 2em;
-} */
 
 
 #slider-bg {
@@ -339,7 +271,7 @@ div.textos-dir {
 }
 
 .logo-final {
-    width: 60%;
+    width: 50%;
     margin: 6em;
 }
 
@@ -367,7 +299,7 @@ div.textos-dir {
 
 
 .item-sec7 a img {
-    width: 15%;
+    width: 7%;
     margin: 0 2em;
 }
 
@@ -410,10 +342,7 @@ div.textos-dir {
     .carousel-control-next, .carousel-control-prev {
         bottom: 50px;
     }
-    .logo-final {
-        width: 100%;
-        margin: 1em;
-    }
+  
     .item-sec7-contact{
         font-size: 2.5em;
     }
@@ -424,9 +353,13 @@ div.textos-dir {
     
     
     .item-sec7 a img {
-        width: 25%;
+        width: 10%;
         margin: 0 1em;
         margin-bottom: 1em;
+    }
+
+    .mock {
+        display: none;
     }
 
 }
@@ -467,10 +400,7 @@ div.textos-dir {
     .carousel-control-next, .carousel-control-prev {
         bottom: 50px;
     }
-    .logo-final {
-        width: 100%;
-        margin: 1em;
-    }
+   
     .item-sec7-contact{
         font-size: 2.5em;
     }
@@ -479,11 +409,11 @@ div.textos-dir {
         font-size: 0.9em;
     }
     
-    .item-sec7 a img {
-        width: 25%;
-        margin: 0 1em;
-        margin-bottom: 1em;
+  
+    .mock {
+        display: none;
     }
+
 
 }
 
@@ -536,10 +466,7 @@ div.textos-dir {
     .carousel-control-next, .carousel-control-prev {
         bottom: 50px;
     }
-    .logo-final {
-        width: 100%;
-        margin: 1em;
-    }
+  
     .item-sec7-contact{
         font-size: 3.5em;
     }
@@ -548,11 +475,11 @@ div.textos-dir {
         font-size: 1.5em;
     }
     
-    .item-sec7 a img {
-        width: 25%;
-        margin: 0 1em;
-        margin-bottom: 1em;
+   
+    .mock img {
+        display: none;
     }
+
 }
 
 
@@ -604,10 +531,7 @@ div.textos-dir {
     .carousel-control-next, .carousel-control-prev {
         bottom: 120px;
     }
-    .logo-final {
-        width: 80%;
-        margin: 2em;
-    }
+  
     .item-sec7-contact{
         font-size: 4.5em;
     }
@@ -615,12 +539,11 @@ div.textos-dir {
     .item-sec7-mail {
         font-size: 2em;
     }
-    
-    .item-sec7 a img {
-        width: 20%;
-        margin: 0 1em;
-        margin-bottom: 1em;
+    .mock img {
+        display: none;
     }
+    
+ 
     
 }
 
@@ -676,10 +599,7 @@ div.textos-dir {
     .carousel-control-next, .carousel-control-prev {
         bottom: 120px;
     }
-    .logo-final {
-        width: 75%;
-        margin: 3em;
-    }
+  
     .item-sec7-contact{
         font-size: 5.5em;
     }
@@ -688,11 +608,7 @@ div.textos-dir {
         font-size: 2.5em;
     }
     
-    .item-sec7 a img {
-        width: 15%;
-        margin: 0 1em;
-        margin-bottom: 1em;
-    }
+    
    
 }
 
@@ -712,8 +628,8 @@ div.textos-dir {
         margin-top: 10px;
     }
     .mauto {
-        width: 90%;
-        height: 90%;
+        width: 60%;
+        
         margin: auto;
         padding: 10px;
     }
@@ -723,5 +639,6 @@ div.textos-dir {
     .tcenter h4{
         font-size: 1.8em;
     }
+   
 }
 
