@@ -410,10 +410,47 @@ div.textos-dir {
     }
     
   
-    .mock {
+    .mock img {
         display: none;
     }
 
+    .first-tittle {
+        font-family: Sacramento;
+        color: #fff;
+        font-size: 5.5em;
+        margin-bottom: 0.2em;  
+    }
+    
+    .second-tittle{
+        font-family: Glacial;
+        color: #fff;
+        font-size: 1.5em;
+        margin-top: -40px;
+        line-height: 1.1em;
+    } 
+    .logos-store img{
+        width: 40%;
+    }
+    
+    .logos-store div p {
+        font-family: Bebas;
+        text-align: center;
+        color: #fff;
+        font-size: 1em;
+    }
+    .img-flags {
+        margin: 1em 6em 0 0;
+    }
+    
+    .flags a img {
+        width: 10%;
+        padding: 0.2em;
+    }
+    #header .logo img {
+        max-width: 5em;
+        display: none;
+       
+    } 
 
 }
 
