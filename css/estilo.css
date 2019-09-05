@@ -784,6 +784,13 @@ div.textos-dir {
         font-size: 1.8em;
     }
 
+    .content {
+        margin-top: 4em;
+    }
+    .mock img {
+        max-width: 50%;
+        height: 60%;
+     }
 
     #logo-mobile {
         display: none;
