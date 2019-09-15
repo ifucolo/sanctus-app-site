@@ -1,0 +1,14 @@
+version: "3"
+
+volumes:
+  proxy_logs:
+
+services:
+  proxy:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    network_mode: host
+    ports:
+      - "80:80"
+      - "443:443"
