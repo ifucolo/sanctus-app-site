@@ -8,3 +8,8 @@ certbot certonly -n \
   -m "contact.mago.tech@gmail.com" \
   -d "sanctus.cc" \
   --standalone --agree-tos
+
+certbot certonly -n \
+  -m "contact.mago.tech@gmail.com" \
+  -d "leitunecosta.com" \
+  --standalone --agree-tos
