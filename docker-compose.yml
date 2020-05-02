@@ -14,4 +14,5 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - "./live:/etc/letsencrypt/live"
+#      - "./live:/etc/letsencrypt/live"
+      - "cert:/etc/letsencrypt"
