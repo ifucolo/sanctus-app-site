@@ -2,7 +2,6 @@ version: "3"
 
 volumes:
   proxy_logs:
-  cert:
 
 services:
   proxy:
@@ -14,5 +13,4 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-#      - "./live:/etc/letsencrypt/live"
-      - "cert:/etc/letsencrypt"
+#      - "./cert:/etc/letsencrypt"
