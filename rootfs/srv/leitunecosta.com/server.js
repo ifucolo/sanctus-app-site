@@ -29,8 +29,15 @@ app.post('/email', (req, res) => {
 });
 
 app.get('/', (req,res) => {
-    //res.sendFile(path.join(__dirname, 'views','index.html'));
     res.sendFile(path.join(__dirname, 'views','index.html'));
+})
+
+app.get('/index-en', (req,res) => {
+    res.sendFile(path.join(__dirname, 'views','index-en.html'));
+})
+
+app.get('/index-es', (req,res) => {
+    res.sendFile(path.join(__dirname, 'views','index-es.html'));
 })
 
 app.listen(PORT, () => {
