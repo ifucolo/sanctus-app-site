@@ -62,7 +62,7 @@ const FlipSide = styled.div(p => ({
   justifyContent: 'center',
   flexDirection: 'column',
   padding: '10px',
-  borderRadius: '15px',
+  borderRadius: '8px',
   boxSizing: 'border-box',
   top: 0,
   p: {
