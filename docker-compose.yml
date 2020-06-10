@@ -8,9 +8,13 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    network_mode: host
     ports:
       - "80:80"
       - "443:443"
     volumes:
       - "./cert:/etc/letsencrypt"
+
+  leitunereguly:
+    build:
+      context: leitunereguly
+      dockerfile: Dockerfile
