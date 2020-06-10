@@ -1,0 +1,202 @@
+{
+  "header": {
+    "title":  "Advocacia dinâmica, criativa e<br /><em>inovadora</em>",
+    "play": "Assista ao nosso <em>pitch</em>",
+    "button": "Seja nosso cliente"
+  },
+  "body": {
+    "presentation": {
+      "title": "Direito funcional e<br /><em>descomplicado</em>",
+      "text": "Nosso escritório trabalha para melhorar a sua experiência com o direito, combinando conhecimento jurídico e tecnologia para alcançar resultados mais eficientes e de forma ágil."
+    },
+    "speciality": {
+      "title": "Nossas<br /><em>especialidades</em>",
+      "text": "Atuamos na parte de consultoria e contencioso, prestando um serviço personalizado para atender aos interesses de pessoas físicas ou jurídicas."
+    },
+    "team": {
+      "title": "Nossa<br /><em>equipe</em>",
+      "text": " Reunimos profissionais comprometidos e com qualidades multidisciplinares, que buscam constante evolução e adaptação às transformações digitais de que o mercado jurídico necessita, liderados pelas sócias fundadoras:",
+      "button": "Trabalhe conosco"
+    },
+    "contact": {
+      "title": "Fale <br /><em>conosco</em>",
+      "text": "Ficou com alguma dúvida? Entre em contato e logo retornaremos para desenvolvermos, juntos, a solução certa para o seu problema. Prestamos serviços para todo o Brasil."
+    },
+    "designlaw": {
+      "title": "Por que unir design e direito é <em>eficiente?</em>",
+      "text": "As técnicas de <em>legal design</em> utilizam uma abordagem centrada no destinário dos documentos jurídicos."
+    },
+    "brain": {
+      "title": "E <em>mais...</em>",
+      "text": "O nosso cérebro é composto por duas partes:",
+      "strong": "Utilizar imagens ao longo de documentos escritos estimula ambas as partes do cérebro, promovendo um entendimento completo da linguagem."
+    },
+    "join": {
+      "title": "Trabalhe <br /><em>Conosco</em>",
+      "text": "Você gosta de desafios e tem um perfil inovador? Venha trabalhar conosco."
+    },
+    "cnjdata": {
+      "title": "Conforme os últimos dados publicados pelo CNJ, <em>em 2018:</em>",
+      "data": [
+        {
+          "before": "tramitavam",
+          "data": "78.7",
+          "circle": "milhões",
+          "after": "processos, aguardando solução definitiva"
+        },
+        {
+          "before": "a força de trabalho era de",
+          "data": "18141",
+          "after": "magistrados"
+        },
+        {
+          "before": "em média, cada magistrado finalizou",
+          "data": "7.5",
+          "after": "processos por dia útil, sem contar férias e recesso"
+        }
+      ],
+      "strong": "Portanto, os documentos jurídicos devem, cada vez mais, ser objetivos e claros."
+    },
+    "rectangle": {
+      "button": {
+        "text": "Saiba mais"
+      }
+    }
+  },
+  "contact": {
+    "form": {
+      "name": {
+        "placeholder": "Nome"
+      },
+      "email": {
+        "placeholder": "E-Mail"
+      },
+      "phone": {
+        "placeholder": "Telefone (opcional)"
+      },
+      "message": {
+        "placeholder": "Mensagem (opcional)"
+      },
+      "submit":{
+        "label": "Vamos inovar juntos"
+      },
+      "file": {
+        "label": "Anexar CV",
+        "placeholder": "Nenhum arquivo selecionado"
+      }
+    }
+  },
+  "rectangle": {
+    "paint": {
+      "title": "Visual Law",
+      "text": "O direito para leigos, e não para juristas."
+    },
+    "wifi": {
+      "title": "Escritório Virtual",
+      "text": "Seu atendimento jurídico a apenas um clique"
+    },
+    "lightbulb": {
+      "title": "Advocacia 4.0",
+      "text": "+ Qualidade\n- Tempo\n- Custo"
+    },
+    "hosting": {
+      "title": "Advocacia Preventiva",
+      "text": "Planeje agora e diminua os riscos depois."
+    }
+  },
+  "carousel": {
+    "civil": {
+      "title": "Direito",
+      "featured": "Civil",
+      "items": [
+        "Representação em inquéritos civis e ações judiciais em geral;",
+        "Elaboração e revisão de contratos cíveis;",
+        "Prevenção de ações judiciais;",
+        "Planejamento sucessório para a preservação patrimonial."
+      ]
+    },
+    "consumer": {
+      "title": "Direito",
+      "featured": "Consumidor",
+      "items": [
+        "Atuação perante órgãos de defesa do consumidor;",
+        "Consultoria e análise preventiva para minimização de riscos nas relações de consumo;",
+        "Elaboração e revisão de licenças de uso, termos de uso e políticas de privacidade."
+      ]
+    },
+    "business": {
+      "title": "Direito",
+      "featured": "Empresarial",
+      "items": [
+        "Representação em cobranças judiciais e extrajudiciais;",
+        "Elaboração e revisão de contratos ou estatutos sociais;",
+        "Acompanhamento durante a constituição, fusão, cisão e extinção de empresas;",
+        "Estruturação societária;",
+        "Mediação empresarial para a resolução do conflito de forma amigável;",
+        "Due diligence;",
+        "Registro e acompanhamento de marcas e patentes."
+      ]
+    },
+    "penal": {
+      "title": "Direito",
+      "featured": "Penal Empresarial",
+      "items": [
+        "Criminal compliance para evitar a violação de normas criminais pela empresa;",
+        "Representação em inquéritos policias, procedimentos administrativos e ações judiciais."
+      ]
+    },
+    "startup": {
+      "title": "Direito",
+      "featured": "Startup",
+      "items": [
+        "FALTOU ESSE"
+      ]
+    },
+    "labor": {
+      "title": "Direito",
+      "featured": "Trabalhista",
+      "items": [
+        "Defesa do empregador em ações judiciais;",
+        "Prevenção de ações trabalhistas;",
+        "Revisão e elaboração de contratos trabalhistas;",
+        "Planejamento trabalhista para a redução de custos."
+      ]
+    },
+    "tributary": {
+      "title": "Direito",
+      "featured": "Tributário",
+      "items": [
+        "Consultoria tributária para pessoas físicas e jurídicas;",
+        "Planejamento tributário para a redução dos custos fiscais;",
+        "Regularização de pendências e obtenção de certidões negativas;",
+        "Representação em ações judiciais movidas pelo Fisco."
+      ]
+    }
+  },
+  "footer": {
+    "disclaimer": "Direitos autorais © 2020 Leitune e Reguly. Todos os direitos reservados."
+  },
+  "documents": {
+    "before": [
+      "documentos longos",
+      "complexa linguagem jurídica",
+      "diagramação confusa"
+    ],
+    "after": [
+      "dados organizados",
+      "destaque das partes importantes",
+      "ilustrações",
+      "infográficos",
+      "fluxogramas",
+      "vídeos"
+    ]
+  },
+  "members": {
+    "reguly": {
+      "description": "Ana Cláudia corre lado a lado com determinação, foco e coragem. Na corrida de rua e na advocacia, acredita na importância de cada passo do processo para alcançarmos nossos resultados com eficiência, qualidade e agilidade."
+    },
+    "leitune": {
+      "description": "Mariana adora viajar e não tem medo de novos desafios. Morando, atualmente, em Amsterdam, traz na bagagem de cada nova experiência soluções criativas e inovadoras para nossos clientes."
+    }
+  }
+}
