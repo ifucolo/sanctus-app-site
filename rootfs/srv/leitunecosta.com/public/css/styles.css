@@ -1,0 +1,157 @@
+@font-face {
+    font-family: Montserrat-Regular;
+    src: url(../fonts/Montserrat/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: Montserrat-Semibold;
+    src: url(../fonts/Montserrat/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: Montserrat-Bold;
+    src: url(../fonts/Montserrat/Montserrat-Bold.ttf);
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    font-family: Montserrat-Regular;  
+}
+
+.font-regular {
+    font-family: Montserrat-Regular;
+    color: #FFF;
+}
+
+.font-semibold {
+    font-family: Montserrat-Semibold;
+    color: #FFF; 
+}
+
+.font-bold {
+    font-family: Montserrat-Bold;
+    color: #FFF;
+}
+
+
+/* linear-gradient(to bottom, rgba(114,47,55,0), rgba(114,47,55,1)),  */
+#section-one {
+    background-size: cover;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, rgba(114,47,55,0), rgba(114,47,55,1)), url(../assets/office.png);
+    background-repeat: no-repeat;
+}
+
+.title-homepage {
+    height: 75vh;
+    margin-left: 3rem;
+}
+
+.logo {
+    margin-left: 6em;
+}
+
+.menu {
+    margin-right: 6em;
+}
+
+.btn-nav {
+    background-color: #FFE8EF;
+    border: none;
+    color: #722F37;
+    border-radius: 10px;
+    width: 15em;
+}
+.btn-nav:hover {
+    background-color: #722F37;
+    color: #FFF;
+}
+
+#section-two {
+    background: #722F37;
+    padding-bottom: 10em;
+}
+
+.img-config-sec-2 {
+    border-radius: 20px;
+}
+
+.sizing-middle {
+  padding: 2em;
+}
+
+#section-three {
+    background-image: linear-gradient(to bottom,rgba(114,47,55,1),rgba(114,47,55,1), rgba(114,47,55,0));
+}
+
+.space-grid {
+    padding: 5em;
+}
+
+.space-grid-esp {
+    padding: 3em;
+}
+
+.width-form {
+    width: 24em;
+}
+.contact {
+    color: #722F37;
+    font-family: Montserrat-Bold;
+}
+.btn-form {
+    color: #FFE8EF;
+    border: none;
+    background-color: #722F37;
+    border-radius: 10px;
+    width: 15em;
+}
+.btn-form:hover {
+    color: #722F37;
+    background-color: #FFE8EF;
+}
+
+.form-control {
+    border: 1px solid #AAA;
+    color: #AAA;
+}
+
+
+.form-control:focus, .btn:focus{
+    box-shadow: 0 0 0 0;
+    
+}
+
+.fa-facebook-f, .fa-twitter, .fa-instagram, .fa-linkedin, .fa-youtube, .fa-medium {
+    color: #722F37;
+    padding: 5em 2em 3em 0;
+}
+
+.pt-mod {
+    padding-top: 8rem;
+}
+
+@media (max-width: 576px) {
+    #section-one {
+        background-image: linear-gradient(to bottom, rgba(114,47,55,0), rgba(114,47,55,1)), url(../assets/cellphone-bg.png);
+    }
+    .sizing-middle, .space-grid {
+        padding: 4em;
+    }
+      .width-form {
+        width: 21em;
+    }
+    .contact {
+        font-size: 2.1em;
+    }
+    .fa-medium {
+        padding: 5em 0em 3em 0;
+    }
+
+    .center-icons {
+        text-align: center !important;
+    }
+    .space-grid-esp {
+        padding: 3em 5em;
+    }
+    
+}

@@ -11,5 +11,11 @@ certbot certonly -n \
 
 certbot certonly -n \
   -m "contact.mago.tech@gmail.com" \
+  -d "leitunecosta.com" \
+  --standalone --agree-tos
+
+
+certbot certonly -n \
+  -m "contact.mago.tech@gmail.com" \
   -d "leitunereguly.com" \
   --standalone --agree-tos

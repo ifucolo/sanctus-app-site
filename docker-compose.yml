@@ -5,6 +5,8 @@ volumes:
 
 services:
   proxy:
+    depends_on:
+      - leitunereguly
     build:
       context: .
       dockerfile: Dockerfile
@@ -16,5 +18,5 @@ services:
 
   leitunereguly:
     build:
-      context: leitunereguly
+      context: leitune-reguly
       dockerfile: Dockerfile
