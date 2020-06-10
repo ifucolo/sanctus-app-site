@@ -74,6 +74,7 @@ const Circle = styled.div({
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
+  flexDirection: 'column'
 });
 
 export default function CnjDataCircles() {
@@ -105,8 +106,7 @@ export default function CnjDataCircles() {
         {items.map(item => (
           <Circle key={item.key}>
             <Odometer value={item.data} format="(.ddd),dd" auto={false} animation="count" />
-            {/* <br /> */}
-            {/* {item.circle} */}
+            {item.circle}
           </Circle>
         ))}
       </Circles>

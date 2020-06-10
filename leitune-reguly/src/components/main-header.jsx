@@ -110,7 +110,7 @@ export default function MainHeader() {
   }
 
   function handleScroll() {
-    const offset = Math.min(pageYOffset/4, 200);
+    const offset = Math.min(pageYOffset/4, 75);
     bgContainerRef.current.style.marginTop = toPixel(-offset);
     contentRef.current.style.top = toPixel(220 + offset);
   }

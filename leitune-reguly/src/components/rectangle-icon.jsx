@@ -89,22 +89,22 @@ export default function RectangleIcon({ variant }) {
 
   const variants = useMemo(() => ({
     paint: {
-      image: '/images/paint.svg',
+      image: '/images/paint.png',
       text: t('paint.text'),
       title: t('paint.title')
     },
     wifi: {
-      image: '/images/wifi.svg',
+      image: '/images/wifi.png',
       text: t('wifi.text'),
       title: t('wifi.title'),
     },
     lightbulb: {
-      image: '/images/lightbulb.svg',
+      image: '/images/lightbulb.png',
       text: t('lightbulb.text'),
       title: t('lightbulb.title'),
     },
     hosting: {
-      image: '/images/hosting.svg',
+      image: '/images/hosting.png',
       text: t('hosting.text'),
       title: t('hosting.title'),
     }

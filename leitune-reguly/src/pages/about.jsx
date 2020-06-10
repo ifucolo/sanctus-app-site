@@ -62,7 +62,7 @@ export default function About() {
                 text={t('brain.text')}
                 size="small"
               />
-              <Brain src='/images/brain.svg' />
+              <Brain src='/images/brain.png' />
               <Strong>{t('brain.strong')}</Strong>
             </InnerSection>
             <InnerSection marginSize="small">
