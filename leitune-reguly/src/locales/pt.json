@@ -2,7 +2,11 @@
   "header": {
     "title":  "Advocacia dinâmica, criativa e<br /><em>inovadora</em>",
     "play": "Assista ao nosso <em>pitch</em>",
-    "button": "Seja nosso cliente"
+    "button": "Seja nosso cliente",
+    "contact": {
+      "title": "Seja nosso cliente",
+      "description": "Saiba mais sobre os nossos serviços"
+    }
   },
   "body": {
     "presentation": {

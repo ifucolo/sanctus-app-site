@@ -36,7 +36,7 @@ export default function Join() {
               />
               <JoinForm />
             </InnerSection>
-            <InnerSection>
+            <InnerSection marginSize="tiny">
               <Footer />
             </InnerSection>
           </Section>

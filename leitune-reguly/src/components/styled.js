@@ -1,36 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import {COLORS} from "@src/components/constants";
-
-export const StyledTitle = styled.h2(p => ({
-  color: p.variant === 'black' ? COLORS.Black : COLORS.White,
-  fontStyle: 'normal',
-  fontWeight: 'bold',
-  fontSize: '24px',
-  lineHeight: '28px',
-  textAlign: 'center',
-
-  em: {
-    color: COLORS.Red,
-    fontStyle: 'italic',
-  }
-}));
-
-export const StyledParagraph = styled.p(p => ({
-  fontStyle: 'normal',
-  fontWeight: 'normal',
-  fontSize: p.fontSize || '20px',
-  lineHeight: p.lineHeight || '23px',
-  textAlign: 'center',
-  color: COLORS.Gray,
-  margin: '20px 0',
-  width: '100%',
-  boxSizing: 'border-box',
-
-  em: {
-    fontStyle: 'italic'
-  }
-}));
+import {COLORS} from "@src/services/constants";
+import {DESKTOP} from "@src/services/responsive";
 
 export const StyledButton = styled.button({
   background: COLORS.Red,
@@ -41,6 +12,14 @@ export const StyledButton = styled.button({
   lineHeight: '18px',
   height: '35px',
   width: '200px',
+  cursor: 'pointer',
+
+  [DESKTOP]: {
+    height: '50px',
+    width: '350px',
+    fontSize: '24px',
+    lineHeight: '28px',
+  }
 });
 
 
@@ -50,11 +29,16 @@ export const Section = styled.section({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+
+  [DESKTOP]: {
+    margin: '80px 150px',
+  }
 });
 
 export const InnerSection = styled.div(p => ({
   marginBottom: {
+    tiny: '4px',
     small: '74px',
     normal: '94px'
   }[p.marginSize || 'normal'],
@@ -62,6 +46,14 @@ export const InnerSection = styled.div(p => ({
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'flex-start',
+
+  [DESKTOP]: {
+    flexDirection: 'row',
+    alignItems: 'flex-start',
+    justifyContent: 'space-between',
+    width: '100%',
+    maxWidth: '1200px'
+  }
 }));
 
 export const BulletList = styled.ul(props => {

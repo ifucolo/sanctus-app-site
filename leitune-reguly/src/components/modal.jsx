@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {COLORS, ZINDEX} from "@src/components/constants";
+import {COLORS, ZINDEX} from "@src/services/constants";
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
 import CloseIcon from '@material-ui/icons/Close';

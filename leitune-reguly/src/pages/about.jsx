@@ -72,7 +72,7 @@ export default function About() {
               />
               <ContactForm />
             </InnerSection>
-            <InnerSection>
+            <InnerSection marginSize="tiny">
               <Footer />
             </InnerSection>
           </Section>

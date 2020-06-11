@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from "styled-components";
 import PropTypes from 'prop-types';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
 

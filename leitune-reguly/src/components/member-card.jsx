@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 
 
 const Item = styled.div({
@@ -116,7 +116,7 @@ export function MemberCard({ name, photo, tagline, description, linkedin }) {
         <p dangerouslySetInnerHTML={{__html: description}} />
       </FlipSide>
       <a href={linkedin}>
-        <Icon src={enabled ? "/images/footer/linkedin2.svg" : "/images/footer/linkedin.svg"} className="linkedin-icon" />
+        <Icon src={enabled ? "/images/footer/linkedin2.png" : "/images/footer/linkedin.png"} className="linkedin-icon" />
       </a>
     </Item>
   )

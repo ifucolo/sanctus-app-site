@@ -13,3 +13,5 @@ export const ZINDEX = {
   NavBar: 1500,
   Menu: 900,
 }
+
+export const DESKTOP_MENU_SCROLL_TRIGGER = 200;

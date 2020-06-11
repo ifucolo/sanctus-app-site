@@ -1,6 +1,6 @@
 import React, {useMemo} from 'react';
 import styled from 'styled-components';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
 import {BulletList} from "@src/components/styled";
 

@@ -1,14 +1,15 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
+import {DESKTOP} from "@src/services/responsive";
 
 const Container = styled.div({
   background: COLORS.White,
   borderRadius: '15px',
   width: 'calc(50% - 30px)',
-  // height: '130px',
+  maxWidth: '200px',
   margin: '5px',
   position: 'relative',
 
@@ -16,7 +17,11 @@ const Container = styled.div({
     content: '""',
     display: 'block',
     marginTop: '100%',
-  }
+  },
+
+  [DESKTOP]: {
+    width: '200px',
+  },
 });
 
 export const Content = styled.div({
@@ -35,6 +40,11 @@ export const Content = styled.div({
 const Image = styled.img({
   width: '45px',
   height: '45px',
+
+  [DESKTOP]: {
+    width: '100px',
+    height: '100px',
+  }
 })
 
 const Span = styled.span({
@@ -42,6 +52,11 @@ const Span = styled.span({
   marginTop: '10px',
   textAlign: 'center',
   fontSize: '12px',
+  lineHeight: '14px',
+  [DESKTOP]: {
+    fontSize: '22px',
+    lineHeight: '26px',
+  }
 });
 
 const FlipSide = styled.div(p => ({
@@ -59,11 +74,17 @@ const FlipSide = styled.div(p => ({
   padding: '10px',
   borderRadius: '15px',
   boxSizing: 'border-box',
+  cursor: 'pointer',
   p: {
     margin: 0,
     padding: 0,
     color: COLORS.White,
     fontStyle: 'italic'
+  },
+  [DESKTOP]: {
+    transform: 'none',
+    opacity: p.enabled ? 1 : 0,
+    transition: 'all 0.3s',
   }
 }));
 
@@ -113,7 +134,7 @@ export default function RectangleIcon({ variant }) {
   const data = variants[variant] || {};
 
   return (
-    <Container onClick={() => setEnabled(!enabled)}>
+    <Container onClick={() => setEnabled(!enabled)} onMouseEnter={() => setEnabled(true)} onMouseLeave={() => setEnabled(false)}>
       <Content>
         <Image src={data.image} />
         <Span>{data.title}</Span>

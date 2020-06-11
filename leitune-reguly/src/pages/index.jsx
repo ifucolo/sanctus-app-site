@@ -12,6 +12,7 @@ import ContactForm from "@src/components/contact-form";
 import Footer from "@src/components/footer";
 import {MainSection} from "@src/components/main-section";
 import {useController} from "@src/store/controllers";
+import {DESKTOP, useResizeListener} from "@src/services/responsive";
 
 const RectangleIconsContainers = styled.div({
   display: 'flex',
@@ -19,12 +20,18 @@ const RectangleIconsContainers = styled.div({
   justifyContent: 'center',
   flexWrap: 'wrap',
   margin: '20px 0px 40px 0px',
-  width: '100%'
+  width: '100%',
+
+  [DESKTOP]: {
+    width: '420px',
+    minWidth: '420px',
+  }
 });
 
 export default function Home() {
   const { t } = useTranslation('body');
   const [state, { saveScrollOffset }] = useController();
+  const { isDesktop } = useResizeListener();
 
   useEffect(() => {
     setTimeout(() => {
@@ -42,19 +49,28 @@ export default function Home() {
           <MainHeader id="top" />
           <Section>
             <InnerSection id="about">
-              <TextSection
-                title={t('presentation.title')}
-                text={t('presentation.text')}
-              />
+              <div>
+                <TextSection
+                  title={t('presentation.title')}
+                  text={t('presentation.text')}
+                />
+                {isDesktop && (
+                  <Link href="/about">
+                    <StyledButton type="button" style={{marginTop: '100px'}}>{t('rectangle.button.text')}</StyledButton>
+                  </Link>
+                )}
+              </div>
               <RectangleIconsContainers>
                 <RectangleIcon variant="paint" />
                 <RectangleIcon variant="wifi" />
                 <RectangleIcon variant="lightbulb" />
                 <RectangleIcon variant="hosting" />
               </RectangleIconsContainers>
-              <Link href="/about">
-                <StyledButton type="button">{t('rectangle.button.text')}</StyledButton>
-              </Link>
+              {!isDesktop && (
+                <Link href="/about">
+                  <StyledButton type="button">{t('rectangle.button.text')}</StyledButton>
+                </Link>
+              )}
             </InnerSection>
             <InnerSection id="speciality">
               <TextSection
@@ -80,7 +96,7 @@ export default function Home() {
               />
               <ContactForm />
             </InnerSection>
-            <InnerSection>
+            <InnerSection marginSize="tiny">
               <Footer />
             </InnerSection>
           </Section>

@@ -1,7 +1,8 @@
 import React, {useMemo} from 'react';
 import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
+import SocialIcons from "@src/components/social-icons";
 
 const Container = styled.div({
   display: 'flex',
@@ -11,8 +12,8 @@ const Container = styled.div({
 });
 
 const SpanEmail = styled.span({
-  fontSize: '18px',
-  lineHeight: '21px',
+  fontSize: '22px',
+  lineHeight: '24px',
   marginBottom: '39px',
   textDecoration: 'none',
   display: 'inline-block',
@@ -42,52 +43,12 @@ const Disclaimer = styled.span({
   marginTop: '50px',
 });
 
-const IconContainer = styled.div({
-  display: 'flex',
-  justifyContent: 'space-between',
-  width: '100%',
-  alignItems: 'center',
-  flexDirection: 'row',
-  marginTop: '40px',
-});
-
-const Icon = styled.img({
-  color: COLORS.Red,
-  width: '15px',
-  height: '15px',
-});
-
 const A = styled.a({
   textDecoration: 'none'
 })
 
 export default function Footer() {
   const {t} = useTranslation('footer');
-
-  const icons = useMemo(() => {
-    return [
-      {
-        image: "/images/footer/facebook.svg",
-        href: "https://facebook.com",
-      },
-      {
-        image: "/images/footer/instagram.svg",
-        href: "https://facebook.com",
-      },
-      {
-        image: "/images/footer/linkedin.svg",
-        href: "https://facebook.com",
-      },
-      {
-        image: "/images/footer/medium.svg",
-        href: "https://facebook.com",
-      },
-      {
-        image: "/images/footer/whatsapp.svg",
-        href: "https://facebook.com",
-      }
-    ]
-  }, []);
 
   const phones = useMemo(() => [
     {
@@ -115,13 +76,7 @@ export default function Footer() {
           <LocationPhone>{phone.number}</LocationPhone>
         </A>
       ))}
-      <IconContainer>
-        {icons.map(icon => (
-          <a key={icon.image} href={icon.href}>
-            <Icon src={icon.image} />
-          </a>
-        ))}
-      </IconContainer>
+      <SocialIcons variant="red" />
       <Disclaimer>{t('disclaimer')}</Disclaimer>
     </Container>
   );

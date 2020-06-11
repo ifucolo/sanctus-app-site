@@ -6,7 +6,7 @@ import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordO
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Carousel } from 'react-responsive-carousel';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
 import Modal from "@src/components/modal";
 import TextSection from "@src/components/text-section";
@@ -114,6 +114,14 @@ export default function HexagonCarousel() {
 
   const items = useMemo(() => [
     {
+      image: '/images/hexagon/startup.png',
+      title: t('startup.title'),
+      featured: t('startup.featured'),
+      items: t('startup.items', {
+        returnObjects: true
+      }),
+    },
+    {
       image: '/images/hexagon/empresarial.png',
       title: t('business.title'),
       featured: t('business.featured'),
@@ -160,15 +168,7 @@ export default function HexagonCarousel() {
       items: t('penal.items', {
         returnObjects: true
       }),
-    },
-    // {
-    //   image: '/images/hexagon/startup.png',
-    //   title: t('startup.title'),
-    //   featured: t('startup.featured'),
-    //   items: t('startup.items', {
-    //     returnObjects: true
-    //   }),
-    // },
+    }
   ], []);
 
   const [modalData, setModalData] = useState({

@@ -7,7 +7,7 @@ import FormInput from "@src/components/form-input";
 import * as _ from 'lodash'
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 
 const Container = styled.div({
   width: '100%',

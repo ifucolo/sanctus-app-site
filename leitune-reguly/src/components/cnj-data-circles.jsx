@@ -1,7 +1,7 @@
 import React, {useEffect, useMemo, useState} from 'react';
 import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import dynamic from 'next/dynamic'
 
 const Odometer = dynamic(import('react-odometerjs'), {

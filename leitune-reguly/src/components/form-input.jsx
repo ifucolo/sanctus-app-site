@@ -2,8 +2,9 @@ import React, {useEffect, useMemo, useRef, useState} from 'react';
 import PropTypes from 'prop-types';
 import { useField } from '@unform/core';
 import styled from 'styled-components';
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 import {StyledButton} from "@src/components/styled";
+import {DESKTOP} from "@src/services/responsive";
 
 const defaultStyle = {
   borderRadius: '8px',
@@ -21,6 +22,11 @@ const defaultStyle = {
 
   '&:focus': {
     borderColor: COLORS.Black,
+  },
+
+  [DESKTOP]: {
+    borderRadius: '5px',
+    marginBottom: '20px',
   }
 }
 
@@ -44,6 +50,14 @@ const TextArea = styled.textarea({
 const Button = styled(StyledButton)({
   width: '100%',
   marginBottom: '10px',
+
+  [DESKTOP]: {
+    height: '25px',
+    width: '100%',
+    borderRadius: '4px',
+    fontSize: '14px',
+    lineHeight: '16px',
+  }
 });
 
 const FileLabel = styled.label({

@@ -1,7 +1,7 @@
 import React, {useContext, useEffect, useState} from 'react';
 import styled from 'styled-components';
 import {store} from "@src/store";
-import {ZINDEX} from "@src/components/constants";
+import {ZINDEX} from "@src/services/constants";
 import ToastMessage from "@src/components/toast-message";
 
 const Container = styled.div({

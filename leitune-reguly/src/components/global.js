@@ -1,5 +1,5 @@
 import {createGlobalStyle} from "styled-components";
-import {COLORS} from "@src/components/constants";
+import {COLORS} from "@src/services/constants";
 
 const resetCss = `
 html, body, div, span, applet, object, iframe,
