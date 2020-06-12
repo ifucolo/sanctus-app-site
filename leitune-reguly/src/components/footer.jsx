@@ -38,6 +38,10 @@ const SpanEmail = styled.span({
   display: 'inline-block',
   color: COLORS.Black,
 
+  '&:hover': {
+    color: COLORS.Red,
+  },
+
   [DESKTOP]: {
     marginBottom: '0',
     fontSize: '30px',

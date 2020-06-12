@@ -28,6 +28,7 @@ const Container = styled.div(p => ({
     background: 'none',
     padding: '35px 150px 0px 150px',
     position: 'absolute',
+    top: '0',
     alignItems: 'flex-start',
     transition: 'all 0.3s',
     ...(p.sticky ? {
@@ -123,6 +124,7 @@ export default function NavBar({children, bg, fixed, menuHidden}) {
       setSticky(true);
     }
     if (isDesktop) {
+      if (!open) setOpen(true);
       return;
     }
     if (Math.abs(prevScroll - currScroll) > 40) {

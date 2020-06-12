@@ -14,6 +14,7 @@ const Container = styled.div({
   [DESKTOP]: {
     maxWidth: '740px',
     marginTop: '100px',
+    alignItems: 'flex-start',
   }
 });
 
@@ -28,6 +29,7 @@ const Image = styled.img({
   [DESKTOP]: {
     height: '150px',
     width: '150px',
+    marginLeft: '20px',
   }
 });
 

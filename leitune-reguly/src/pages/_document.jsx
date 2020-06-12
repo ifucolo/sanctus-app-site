@@ -26,7 +26,7 @@ export default class MyDocument extends Document {
       <Html lang="pt">
         <Head>
           <title>Leitune & Reguly</title>
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
           {/* Step 5: Output the styles in the head  */}
           {this.props.styleTags}
         </Head>

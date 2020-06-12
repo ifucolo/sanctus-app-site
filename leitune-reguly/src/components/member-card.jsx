@@ -148,8 +148,8 @@ export function MemberCard({ name, photo, tagline, description, linkedin }) {
       <FlipSide className="flip-side" enabled={enabled}>
         <p dangerouslySetInnerHTML={{__html: description}} />
       </FlipSide>
-      <a href={linkedin}>
-        <Icon src={enabled ? "/images/footer/linkedin2.png" : "/images/footer/linkedin.png"} className="linkedin-icon" />
+      <a href={linkedin} target="_blank">
+        <Icon src={enabled ? "/images/footer/linkedin-white.png" : "/images/footer/linkedin-red.png"} className="linkedin-icon" />
       </a>
     </Item>
   )

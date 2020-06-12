@@ -57,6 +57,8 @@ const TextArea = styled.textarea({
 
   [DESKTOP]: {
     height: '200px',
+    fontSize: '24px',
+    lineHeight: '28px',
   }
 });
 

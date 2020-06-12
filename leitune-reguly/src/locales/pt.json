@@ -151,9 +151,13 @@
     },
     "startup": {
       "title": "Direito",
-      "featured": "Startup",
+      "featured": "Startups e inovação",
       "items": [
-        "FALTOU ESSE"
+        "Assessoria jurídica de forma personalizada para startups;",
+        "Estudo de viabilidade jurídica do negócio;",
+        "Elaboração de contratos e estatutos sociais, acordos de sócios, acordos de confidencialidade, contratos de vesting, stock option, etc;",
+        "Planejamento tributário para a redução dos custos fiscais;",
+         "Registro e acompanhamento de marcas e patentes."
       ]
     },
     "labor": {
@@ -175,6 +179,9 @@
         "Regularização de pendências e obtenção de certidões negativas;",
         "Representação em ações judiciais movidas pelo Fisco."
       ]
+    },
+    "hover": {
+      "button": "Saiba mais"
     }
   },
   "footer": {

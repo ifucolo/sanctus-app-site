@@ -8,6 +8,7 @@ import {BulletList, Close} from "@src/components/styled";
 import Modal from "@src/components/modal";
 import {useController} from "@src/store/controllers";
 import CloseIcon from "@material-ui/icons/Close";
+import {useTranslation} from "react-i18next";
 
 const CONTAINER_WIDTH = 1000;
 const CONTAINER_HEIGHT = 600;
@@ -37,6 +38,9 @@ const Item = styled.div(p => ({
   width: toPixel(ITEM_WIDTH),
   height: toPixel(ITEM_HEIGHT),
   backgroundImage: p.filled ? 'url(/images/hexagon/hexagon-filled.png)' : 'url(/images/hexagon/hexagon.png)',
+  '&:first-child': {
+    backgroundImage: 'url(/images/hexagon/hexagon-filled.png)',
+  },
   backgroundSize: 'contain',
   backgroundPosition: 'center center',
   backgroundRepeat: 'no-repeat',
@@ -48,15 +52,61 @@ const Item = styled.div(p => ({
   left: toPixel(p.position[0]),
   top: toPixel(p.position[1]),
   pointerEvents: 'none',
+
+  '.-no-hover': {
+    display: 'block',
+  },
+
+  '.-hover': {
+    display: 'none'
+  },
+
   '&:hover': {
     backgroundImage: 'url(/images/hexagon/hexagon-filled.png)',
-  }
+
+    '.-no-hover': {
+      display: 'none',
+    },
+
+    '.-hover': {
+      display: 'block'
+    },
+  },
 }));
+
+const HoverHelper = styled.div({
+  pointerEvents: 'auto',
+  position: 'absolute',
+  width: '105px',
+  height: '180px',
+  // background: 'blue',
+  '&:before': {
+    content: "''",
+    width: '50px',
+    height: '93px',
+    position: 'absolute',
+    // background: 'yellow',
+    transform: 'skew(60deg,-60deg)',
+    pointerEvents: 'auto',
+    top: '44px',
+    left: '27px',
+  },
+  '&:after': {
+    content: "''",
+    width: '50px',
+    height: '93px',
+    position: 'absolute',
+    // background: 'black',
+    transform: 'skew(-60deg,60deg)',
+    pointerEvents: 'auto',
+    top: '44px',
+    left: '27px',
+  }
+})
 
 const Icon = styled.img({
   width: '100px',
   height: '100px',
-  pointerEvents: 'auto',
 });
 
 export const Title = styled.span(p => ({
@@ -101,30 +151,59 @@ const CardImageBg = styled.div(p => ({
   pointerEvents: 'none',
 }));
 
-const ITEM_POSITIONS = [
-  [CENTER[0], CENTER[1]],
-  [CENTER[0], CENTER[1] - ITEM_HEIGHT],
-  [CENTER[0] + ITEM_WIDTH/1.25, CENTER[1] - ITEM_HEIGHT/2],
-  [CENTER[0] + ITEM_WIDTH/1.25, CENTER[1] + ITEM_HEIGHT/2],
-  [CENTER[0], CENTER[1] + ITEM_HEIGHT],
-  [CENTER[0] - ITEM_WIDTH/1.25, CENTER[1] + ITEM_HEIGHT/2],
-  [CENTER[0] - ITEM_WIDTH/1.25, CENTER[1] - ITEM_HEIGHT/2],
-];
+const LearnMore = styled.span({
+  fontSize: '20px',
+  lineHeight: '23px',
+  display: 'flex',
+  alignItems: 'center',
+  textAlign: 'center',
+  color: COLORS.Red,
+  background: COLORS.White,
+  padding: '10px',
+  borderRadius: '8px',
+})
 
-const TITLE_POSITIONS = [
-  [0, 0, 'right'],
-  [550, -5, 'right'],
-  [765, 178, 'right'],
-  [765, 370, 'right'],
-  [240, 555, 'left'],
-  [23, 370, 'left'],
-  [23, 178, 'left'],
-]
+const ITEM_POSITIONS = [
+  { // STARTUP
+    card: [CENTER[0], CENTER[1]],
+    label: null,
+  },
+  { // EMPRESARIAL
+    card: [CENTER[0], CENTER[1] - ITEM_HEIGHT],
+    label: [550, -5, 'right'],
+  },
+  // TRIBUTARIO
+  {
+    card: [CENTER[0] - ITEM_WIDTH/1.25, CENTER[1] + ITEM_HEIGHT/2],
+    label:   [23, 370, 'left'],
+  },
+  // TRABALHISTA
+  {
+    card: [CENTER[0] - ITEM_WIDTH/1.25, CENTER[1] - ITEM_HEIGHT/2],
+    label: [23, 178, 'left'],
+  },
+   // CIVIL
+  {
+    card: [CENTER[0] + ITEM_WIDTH/1.25, CENTER[1] - ITEM_HEIGHT/2],
+    label:   [765, 178, 'right'],
+  },
+   // CONSUMIDOR
+  {
+    card: [CENTER[0], CENTER[1] + ITEM_HEIGHT],
+    label:   [240, 555, 'left'],
+  },
+   // PENAL
+  {
+    card: [CENTER[0] + ITEM_WIDTH/1.25, CENTER[1] + ITEM_HEIGHT/2],
+    label: [765, 370, 'right'],
+  },
+];
 
 const MODAL_HONEYCOMB = "MODAL_HONEYCOMB ";
 
 export default function Honeycomb() {
   const { items } = useSpecialitiesList();
+  const {t} = useTranslation('carousel');
   const [state, { openModal, closeModal }] = useController();
   const [modalData, setModalData] = useState({
     image: '',
@@ -161,14 +240,19 @@ export default function Honeycomb() {
       </Modal>
       <Content>
         {
-          items.map((item, i) => (
-            <>
-              <Item position={ITEM_POSITIONS[i] || [0, 0]} onClick={() => toggleModal(item)} >
-                <Icon src={item.image} alt={item.featured} />
-              </Item>
-              <Title position={TITLE_POSITIONS[i] || [0,0]}>{item.featured}</Title>
-            </>
-          ))
+          items.map((item, i) => {
+            const {card, label} = ITEM_POSITIONS[i] || {};
+            return (
+              <>
+                <Item position={card} onClick={() => toggleModal(item)} >
+                  <HoverHelper />
+                  <Icon className="-no-hover" src={item.image} alt={item.featured} />
+                  <LearnMore className="-hover">{t('hover.button')}</LearnMore>
+                </Item>
+                {label && <Title position={label}>{item.featured}</Title>}
+              </>
+            )
+          })
         }
       </Content>
     </Container>

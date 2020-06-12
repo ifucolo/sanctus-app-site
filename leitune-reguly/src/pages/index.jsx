@@ -47,7 +47,7 @@ export default function Home() {
                 />
                 {isDesktop && (
                   <Link href="/about">
-                    <StyledButton type="button" style={{marginTop: '100px'}}>{t('rectangle.button.text')}</StyledButton>
+                    <StyledButton type="button" style={{marginTop: '140px'}}>{t('rectangle.button.text')}</StyledButton>
                   </Link>
                 )}
               </div>

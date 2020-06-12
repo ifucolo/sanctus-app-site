@@ -77,6 +77,9 @@ export const BulletList = styled.ul(props => {
       maxWidth: '80px',
       fontSize: '10px',
       lineHeight: '12px',
+      desktop: {
+        maxWidth: '240px',
+      },
       bullet: {
         marginLeft: '-10px',
         marginRight: '5px',
@@ -87,6 +90,9 @@ export const BulletList = styled.ul(props => {
       maxWidth: '100%',
       fontSize: '16px',
       lineHeight: '18px',
+      desktop: {
+        maxWidth: '500px',
+      },
       bullet: {
         marginLeft: '-12px',
         marginRight: '5px',
@@ -101,7 +107,7 @@ export const BulletList = styled.ul(props => {
     listStyle: 'none',
     maxWidth: size.maxWidth,
     [DESKTOP]: {
-      maxWidth: props.size === 'small' ? '240px' : '500px',
+      maxWidth: size.desktop.maxWidth
     },
     li: {
       fontSize: size.fontSize,
