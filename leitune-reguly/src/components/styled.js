@@ -1,12 +1,12 @@
 import React from "react";
 import styled from "styled-components";
-import {COLORS} from "@src/services/constants";
+import {COLORS, ZINDEX} from "@src/services/constants";
 import {DESKTOP} from "@src/services/responsive";
 
 export const StyledButton = styled.button({
   background: COLORS.Red,
   color: COLORS.White,
-  border: 'none',
+  border: `2px solid ${COLORS.Red}`,
   borderRadius: '8px',
   fontSize: '15px',
   lineHeight: '18px',
@@ -19,6 +19,12 @@ export const StyledButton = styled.button({
     width: '350px',
     fontSize: '24px',
     lineHeight: '28px',
+    transition: 'all 0.2s',
+
+    '&:hover': {
+      background: COLORS.White,
+      color: COLORS.Red,
+    }
   }
 });
 
@@ -48,13 +54,22 @@ export const InnerSection = styled.div(p => ({
   justifyContent: 'flex-start',
 
   [DESKTOP]: {
-    flexDirection: 'row',
-    alignItems: 'flex-start',
-    justifyContent: 'space-between',
+    flexDirection: p.direction || 'row',
+    alignItems: p.align || 'flex-start',
+    justifyContent: p.justify || 'space-between',
     width: '100%',
     maxWidth: '1200px'
   }
 }));
+
+export const Close = styled.div({
+  position: 'absolute',
+  top: '15px',
+  right: '15px',
+  color: COLORS.Black,
+  zIndex: ZINDEX.Modal,
+  cursor: 'pointer',
+});
 
 export const BulletList = styled.ul(props => {
   const sizes = {
@@ -85,6 +100,9 @@ export const BulletList = styled.ul(props => {
     marginTop: '10px',
     listStyle: 'none',
     maxWidth: size.maxWidth,
+    [DESKTOP]: {
+      maxWidth: props.size === 'small' ? '240px' : '500px',
+    },
     li: {
       fontSize: size.fontSize,
       lineHeight: size.lineHeight,
@@ -95,8 +113,56 @@ export const BulletList = styled.ul(props => {
         color: COLORS.Red,
         fontWeight: 'bold',
         display: 'inline',
-        ...size.bullet
+        ...size.bullet,
+        [DESKTOP]: {
+          marginLeft: '-12px',
+          marginRight: '5px',
+          fontSize: '20px',
+          lineHeight: '20px',
+        }
       },
+
+      [DESKTOP]: {
+        fontSize: '26px',
+        lineHeight: '30px',
+      }
     },
+  }
+});
+
+export const RectangleIconsContainers = styled.div({
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  flexWrap: 'wrap',
+  margin: '20px 0px 40px 0px',
+  width: '100%',
+
+  [DESKTOP]: {
+    width: '480px',
+    minWidth: '480px',
+  }
+});
+
+export const PageCloseWrapper = styled.div({
+  position: 'fixed',
+  top: "20px",
+  cursor: 'pointer',
+  right: '20px',
+  [DESKTOP]: {
+    right: '100px',
+    svg: {
+      width: '1.5em',
+      height: '1.5em',
+    }
+  },
+});
+
+export const Center = styled.div({
+  [DESKTOP]: {
+    width: '100%',
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
   }
 });

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import {COLORS} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
-import {DESKTOP} from "@src/services/responsive";
+import {DESKTOP, useResizeListener} from "@src/services/responsive";
 
 const Container = styled.div({
   background: COLORS.White,
@@ -21,6 +21,7 @@ const Container = styled.div({
 
   [DESKTOP]: {
     width: '200px',
+    margin: '20px'
   },
 });
 
@@ -94,6 +95,7 @@ export default function RectangleIcon({ variant }) {
   const { t } = useTranslation('rectangle');
   const [enabled, setEnabled] = useState(false);
   const [tid, setTid] = useState(0);
+  const {isDesktop} = useResizeListener();
 
   useEffect(() => {
     if (tid) clearTimeout(tid);
@@ -134,7 +136,11 @@ export default function RectangleIcon({ variant }) {
   const data = variants[variant] || {};
 
   return (
-    <Container onClick={() => setEnabled(!enabled)} onMouseEnter={() => setEnabled(true)} onMouseLeave={() => setEnabled(false)}>
+    <Container
+      onClick={() => !isDesktop && setEnabled(!enabled)}
+      onMouseEnter={() => isDesktop && setEnabled(true)}
+      onMouseLeave={() => isDesktop && setEnabled(false)}
+    >
       <Content>
         <Image src={data.image} />
         <Span>{data.title}</Span>

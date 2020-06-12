@@ -1,18 +1,15 @@
 import React, {useContext, useMemo, useState} from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
-import FiberManualRecordOutlinedIcon from '@material-ui/icons/FiberManualRecordOutlined';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import { Carousel } from 'react-responsive-carousel';
 import {COLORS} from "@src/services/constants";
-import {useTranslation} from "react-i18next";
 import Modal from "@src/components/modal";
 import TextSection from "@src/components/text-section";
-import {store} from "@src/store";
-import {ACTION_TYPES} from "@src/store/actions";
-import {BulletList} from "@src/components/styled";
+import {BulletList, Close} from "@src/components/styled";
+import {useController} from "@src/store/controllers";
+import {useSpecialitiesList} from "@src/services/specialities";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Item = styled.div({
   backgroundColor: COLORS.LightGray,
@@ -109,67 +106,8 @@ const Indicator = styled.li(p => ({
 const MODAL_HEXAGONS = 'MODAL_HEXAGONS';
 
 export default function HexagonCarousel() {
-  const { t } = useTranslation('carousel');
-  const {state, dispatch} = useContext(store);
-
-  const items = useMemo(() => [
-    {
-      image: '/images/hexagon/startup.png',
-      title: t('startup.title'),
-      featured: t('startup.featured'),
-      items: t('startup.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/empresarial.png',
-      title: t('business.title'),
-      featured: t('business.featured'),
-      items: t('business.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/tributario.png',
-      title: t('tributary.title'),
-      featured: t('tributary.featured'),
-      items: t('tributary.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/trabalhista.png',
-      title: t('labor.title'),
-      featured: t('labor.featured'),
-      items: t('labor.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/civil.png',
-      title: t('civil.title'),
-      featured: t('civil.featured'),
-      items: t('civil.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/consumidor.png',
-      title: t('consumer.title'),
-      featured: t('consumer.featured'),
-      items: t('consumer.items', {
-        returnObjects: true
-      }),
-    },
-    {
-      image: '/images/hexagon/penal.png',
-      title: t('penal.title'),
-      featured: t('penal.featured'),
-      items: t('penal.items', {
-        returnObjects: true
-      }),
-    }
-  ], []);
+  const { items } = useSpecialitiesList();
+  const [state, { openModal, closeModal }] = useController();
 
   const [modalData, setModalData] = useState({
     image: '',
@@ -178,15 +116,18 @@ export default function HexagonCarousel() {
     items: [],
   })
 
-  function openModal(data) {
+  function toggleModal(data) {
     setModalData(data);
-    dispatch({type: ACTION_TYPES.OPEN_MODAL, name: MODAL_HEXAGONS});
+    openModal(MODAL_HEXAGONS);
   }
 
   return (
     <Container>
       <Modal name={MODAL_HEXAGONS}>
         <Card>
+          <Close onClick={closeModal}>
+            <CloseIcon />
+          </Close>
           <CardImage src={modalData.image} alt={modalData.featured} />
           <TextSection
             text={modalData.text}
@@ -209,7 +150,7 @@ export default function HexagonCarousel() {
         renderIndicator={(clickHandler, isSelected) => <Indicator isSelected={isSelected} />}
       >
         {items.map(item => (
-          <Item key={item.image} onClick={() => openModal(item)}>
+          <Item key={item.image} onClick={() => toggleModal(item)}>
             <HexagonWrapper>
               <Hexagon src="/images/hexagon/hexagon.png" />
               <Icon src={item.image} alt={item.featured} />

@@ -1,32 +1,23 @@
-import React, {useContext, useEffect, useState} from 'react';
+import React, {useEffect} from 'react';
 import Link from 'next/link';
 import MainHeader from "@src/components/main-header";
-import styled from "styled-components";
 import {useTranslation} from "react-i18next";
 import TextSection from "@src/components/text-section";
 import RectangleIcon from "@src/components/rectangle-icon";
-import {InnerSection, Section, StyledButton} from "@src/components/styled";
+import {
+  InnerSection,
+  RectangleIconsContainers,
+  Section,
+  StyledButton
+} from "@src/components/styled";
 import HexagonCarousel from "@src/components/hexagon-carousel";
 import MembersList from "@src/components/members-list";
 import ContactForm from "@src/components/contact-form";
 import Footer from "@src/components/footer";
 import {MainSection} from "@src/components/main-section";
 import {useController} from "@src/store/controllers";
-import {DESKTOP, useResizeListener} from "@src/services/responsive";
-
-const RectangleIconsContainers = styled.div({
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center',
-  flexWrap: 'wrap',
-  margin: '20px 0px 40px 0px',
-  width: '100%',
-
-  [DESKTOP]: {
-    width: '420px',
-    minWidth: '420px',
-  }
-});
+import {useResizeListener} from "@src/services/responsive";
+import Honeycomb from "@src/components/honeycomb";
 
 export default function Home() {
   const { t } = useTranslation('body');
@@ -72,14 +63,14 @@ export default function Home() {
                 </Link>
               )}
             </InnerSection>
-            <InnerSection id="speciality">
+            <InnerSection id="speciality" direction="column">
               <TextSection
                 title={t('speciality.title')}
                 text={t('speciality.text')}
               />
-              <HexagonCarousel />
+              { isDesktop ? <Honeycomb /> : <HexagonCarousel /> }
             </InnerSection>
-            <InnerSection id="team">
+            <InnerSection id="team" direction="column">
               <TextSection
                 title={t('team.title')}
                 text={t('team.text')}

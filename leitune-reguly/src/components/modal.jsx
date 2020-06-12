@@ -24,15 +24,11 @@ const Overlay = styled.div(p => ({
 const Card = styled.div({
   position: 'relative',
   width: 'calc(100% - 20px)',
+  display: 'flex',
+  flexDirection: 'row',
+  justifyContent: 'center',
+  alignItems: 'center',
 });
-
-const Close = styled.div({
-  position: 'absolute',
-  top: '15px',
-  right: '15px',
-  color: COLORS.Black,
-  zIndex: ZINDEX.Modal
-})
 
 export default function Modal({children, name}) {
   const { state, dispatch } = useContext(store);
@@ -52,9 +48,6 @@ export default function Modal({children, name}) {
   return (
     <Overlay onClick={closeModal} ready={ready}>
       <Card onClick={e => e.stopPropagation()}>
-        <Close onClick={closeModal}>
-          <CloseIcon />
-        </Close>
         {children}
       </Card>
     </Overlay>

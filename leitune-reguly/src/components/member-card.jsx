@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import styled from "styled-components";
 import PropTypes from 'prop-types';
 import {COLORS} from "@src/services/constants";
+import {DESKTOP, useResizeListener} from "@src/services/responsive";
 
 
 const Item = styled.div({
@@ -14,12 +15,20 @@ const Item = styled.div({
   borderRadius: '8px',
   marginTop: '20px',
 
+  [DESKTOP]: {
+    height: '330px',
+    width: '410px',
+  },
+
   '&:nth-child(odd)': {
     '.photo': {
       left: 0
     },
     h3: {
-      right: '8px'
+      right: '8px',
+      [DESKTOP]: {
+        right: '0px',
+      }
     },
     '.linkedin-icon': {
       right: '20px'
@@ -34,7 +43,10 @@ const Item = styled.div({
       right: 0,
     },
     h3: {
-      left: '8px'
+      left: '8px',
+      [DESKTOP]: {
+        left: '30px',
+      }
     },
     '.linkedin-icon': {
       left: '20px'
@@ -52,7 +64,7 @@ const FlipSide = styled.div(p => ({
   transform: p.enabled ? 'scale(1)' : 'scale(0)',
   // transform: p.enabled ? 'scaleX(1)' : 'scaleX(0)',
   width: '100%',
-  height: '200px',
+  height: '100%',
   opacity: p.enabled ? '1' : '0',
   backgroundColor: COLORS.Red,
   display: 'flex',
@@ -69,7 +81,11 @@ const FlipSide = styled.div(p => ({
     margin: 0,
     padding: 0,
     color: COLORS.White,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    [DESKTOP]: {
+      fontSize: '18px',
+      lineHeight: '21px',
+    }
   }
 }));
 
@@ -85,12 +101,23 @@ const Name = styled.h3({
     fontSize: '12px',
     lineHeight: '14px',
     color: COLORS.Gray
+  },
+
+  [DESKTOP]: {
+    fontSize: '22px',
+    lineHeight: '26px',
+    maxWidth: '180px',
+    top: '60px',
   }
 });
 
 const Photo = styled.img({
   position: 'absolute',
   height: '200px',
+
+  [DESKTOP]: {
+    height: '330px'
+  }
 });
 
 
@@ -103,9 +130,15 @@ const Icon = styled.img(p => ({
 
 export function MemberCard({ name, photo, tagline, description, linkedin }) {
   const [enabled, setEnabled] = useState(false);
+  const {isDesktop} = useResizeListener();
 
   return (
-    <Item key={name} onClick={() => setEnabled(!enabled)}>
+    <Item
+      key={name}
+      onClick={() => !isDesktop && setEnabled(!enabled)}
+      onMouseEnter={() => isDesktop && setEnabled(true)}
+      onMouseLeave={() => isDesktop && setEnabled(false)}
+    >
       <Photo src={photo} className="photo" />
       <Name>
         {name}

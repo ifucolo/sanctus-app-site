@@ -8,11 +8,15 @@ import * as _ from 'lodash'
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
 import {COLORS} from "@src/services/constants";
+import {DESKTOP} from "@src/services/responsive";
 
 const Container = styled.div({
   width: '100%',
   maxWidth: 'calc(100vw - 40px)',
-  boxSizing: 'border-box'
+  boxSizing: 'border-box',
+  [DESKTOP]: {
+    maxWidth: '500px',
+  }
 });
 
 const Feedback = styled.div(p => ({
@@ -30,7 +34,7 @@ const Feedback = styled.div(p => ({
   transition: 'opacity 0.1s',
 }));
 
-export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAfterSubmit }) {
+export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAfterSubmit, size }) {
   const formRef = useRef(null);
   const {dispatch} = useContext(store);
   const [tid, setTid] = useState(0);
@@ -61,7 +65,7 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
   }, [inputs]);
 
   const fields = useMemo(() => inputs.map(input => {
-    return <FormInput {...input} key={input.name} />
+    return <FormInput {...input} size={size} key={input.name} />
   }), [inputs]);
 
   async function handleSubmit(data) {
@@ -114,6 +118,7 @@ CustomForm.propTypes = {
   onSubmit: PropTypes.func,
   showSuccessToast: PropTypes.bool,
   clearAfterSubmit: PropTypes.bool,
+  size: PropTypes.oneOf(['small', 'normal']),
   inputs: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
@@ -122,7 +127,7 @@ CustomForm.propTypes = {
       required: PropTypes.bool,
       schema: PropTypes.object,
       accept: PropTypes.string,
-      type: PropTypes.oneOf(['text', 'password', 'email', 'number', 'tel', 'textarea', 'submit']).isRequired,
+      type: PropTypes.oneOf(['text', 'password', 'email', 'number', 'tel', 'textarea', 'submit', 'file']).isRequired,
     }).isRequired,
   ).isRequired
 };
@@ -131,4 +136,5 @@ CustomForm.defaultProps = {
   onSubmit: () => undefined,
   showSuccessToast: true,
   clearAfterSubmit: true,
+  size: 'normal'
 };

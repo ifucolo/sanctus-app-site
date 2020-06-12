@@ -3,13 +3,32 @@ import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
 import {COLORS} from "@src/services/constants";
 import SocialIcons from "@src/components/social-icons";
+import {DESKTOP} from "@src/services/responsive";
 
 const Container = styled.div({
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'flex-start',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  width: '100%',
+  [DESKTOP]: {
+    alignItems: 'flex-start',
+  }
 });
+
+const Content = styled.div({
+  width: '100%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'flex-start',
+  flexDirection: 'column',
+  [DESKTOP]: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'flex-end',
+    marginBottom: '60px',
+  }
+})
 
 const SpanEmail = styled.span({
   fontSize: '22px',
@@ -18,6 +37,12 @@ const SpanEmail = styled.span({
   textDecoration: 'none',
   display: 'inline-block',
   color: COLORS.Black,
+
+  [DESKTOP]: {
+    marginBottom: '0',
+    fontSize: '30px',
+    lineHeight: '35px',
+  }
 });
 
 const LocationName = styled.h3({
@@ -27,6 +52,11 @@ const LocationName = styled.h3({
   margin: '20px 0 10px 0',
   textAlign: 'center',
   color: COLORS.Black,
+
+  [DESKTOP]: {
+    fontSize: '26px',
+    lineHeight: '30px',
+  }
 });
 
 const LocationPhone = styled.h4({
@@ -41,6 +71,12 @@ const Disclaimer = styled.span({
   lineHeight: '9px',
   color: COLORS.Gray,
   marginTop: '50px',
+
+  [DESKTOP]: {
+    fontSize: '16px',
+    lineHeight: '19px',
+    marginTop: '93px',
+  }
 });
 
 const A = styled.a({
@@ -67,6 +103,7 @@ export default function Footer() {
 
   return (
     <Container>
+      <Content>
       <A href="mailto:hello@leitunereguly.com">
         <SpanEmail>hello@leitunereguly.com</SpanEmail>
       </A>
@@ -76,6 +113,7 @@ export default function Footer() {
           <LocationPhone>{phone.number}</LocationPhone>
         </A>
       ))}
+      </Content>
       <SocialIcons variant="red" />
       <Disclaimer>{t('disclaimer')}</Disclaimer>
     </Container>

@@ -2,11 +2,26 @@ import React, {useMemo} from "react";
 import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
 import {MemberCard} from "@src/components/member-card";
+import {DESKTOP} from "@src/services/responsive";
 
-const Container = styled.div({
+export const Container = styled.div({
+  width: '100%',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+})
+
+const Content = styled.div({
   width: '100%',
   maxWidth: '250px',
   marginBottom: '40px',
+
+  [DESKTOP]: {
+    display: "flex",
+    flexDirection: "row",
+    maxWidth: '930px',
+    justifyContent: 'space-between'
+  }
 });
 
 export default function MembersList() {
@@ -31,9 +46,11 @@ export default function MembersList() {
 
   return (
     <Container>
-      {members.map(member => (
-        <MemberCard key={member.name} {...member} />
-      ))}
+      <Content>
+        {members.map(member => (
+          <MemberCard key={member.name} {...member} />
+        ))}
+      </Content>
     </Container>
   )
 }

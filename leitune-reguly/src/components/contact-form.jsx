@@ -2,6 +2,16 @@ import React, {useMemo} from "react";
 import {useTranslation} from "react-i18next";
 import CustomForm from "@src/components/custom-form";
 import * as Yup from 'yup';
+import {DESKTOP} from "@src/services/responsive";
+import styled from 'styled-components';
+
+const Container = styled.div({
+  width: '100%',
+  [DESKTOP]: {
+    width: '500px',
+    paddingTop: '135px',
+  }
+})
 
 export default function ContactForm() {
   const {t} = useTranslation('contact');
@@ -38,6 +48,8 @@ export default function ContactForm() {
   ]), []);
 
   return (
-    <CustomForm inputs={inputs} />
+    <Container>
+      <CustomForm inputs={inputs} />
+    </Container>
   )
 }

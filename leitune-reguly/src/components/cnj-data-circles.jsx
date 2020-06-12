@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import {useTranslation} from "react-i18next";
 import {COLORS} from "@src/services/constants";
 import dynamic from 'next/dynamic'
+import {DESKTOP} from "@src/services/responsive";
 
 const Odometer = dynamic(import('react-odometerjs'), {
   ssr: false,
@@ -14,7 +15,11 @@ const Container = styled.div({
   flexDirection: 'column',
   alignItems: 'center',
   width: '100%',
-  marginTop: '20px'
+  marginTop: '20px',
+
+  [DESKTOP]: {
+    marginTop: '70px',
+  }
 });
 
 const Before = styled.div({
@@ -25,13 +30,23 @@ const Before = styled.div({
   width: '100%',
   marginBottom: '10px',
 
+  [DESKTOP]: {
+    marginBottom: '20px',
+  },
+
   span: {
     display: 'inline-block',
     fontSize: '12px',
     fontHeight: '14px',
     textAlign: 'center',
     color: COLORS.Gray,
-    width: '75px'
+    width: '75px',
+
+    [DESKTOP]: {
+      fontSize: '25px',
+      fontHeight: '29px',
+      width: '220px',
+    }
   }
 });
 
@@ -49,7 +64,13 @@ const After = styled.div({
     fontHeight: '14px',
     textAlign: 'center',
     color: COLORS.Gray,
-    width: '75px'
+    width: '75px',
+
+    [DESKTOP]: {
+      fontSize: '25px',
+      fontHeight: '29px',
+      width: '220px',
+    }
   }
 });
 
@@ -60,6 +81,10 @@ const Circles = styled.div({
   alignItems: 'center',
   width: '100%',
   marginBottom: '10px',
+
+  [DESKTOP]: {
+    marginBottom: '20px',
+  }
 })
 
 const Circle = styled.div({
@@ -74,7 +99,14 @@ const Circle = styled.div({
   alignItems: 'center',
   justifyContent: 'center',
   textAlign: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  [DESKTOP]: {
+    border: `8px solid ${COLORS.Red}`,
+    width: '220px',
+    height: '220px',
+    fontSize: '50px',
+    lineHeight: '59px',
+  }
 });
 
 export default function CnjDataCircles() {

@@ -1,15 +1,14 @@
 import React from 'react';
-import Head from 'next/head'
 import {useTranslation} from "react-i18next";
-import ModalHeader from "@src/components/modal-header";
 import TextSection from "@src/components/text-section";
 import Footer from "@src/components/footer";
 import JoinForm from "@src/components/join-form";
-import {InnerSection, Section} from "@src/components/styled";
+import {InnerSection, PageCloseWrapper, Section} from "@src/components/styled";
 import {MainSection} from "@src/components/main-section";
 import styled from "styled-components";
-
-
+import CloseIcon from "@material-ui/icons/Close";
+import Link from "next/link";
+import {DESKTOP} from "@src/services/responsive";
 
 const TopImage = styled.img({
   width: '45px',
@@ -17,6 +16,11 @@ const TopImage = styled.img({
   position: 'absolute',
   top: '15px',
   left: '15px',
+  [DESKTOP]: {
+    left: '100px',
+    width: '80px',
+    height: '80px',
+  }
 })
 
 export default function Join() {
@@ -26,11 +30,16 @@ export default function Join() {
     <div className="container">
       <MainSection>
         <>
-          <ModalHeader />
+          <Link href="/">
+            <PageCloseWrapper>
+              <CloseIcon/>
+            </PageCloseWrapper>
+          </Link>
           <TopImage src="/images/members/sport-team.png" />
           <Section>
-            <InnerSection marginSize="small">
+            <InnerSection marginSize="small" direction="column" align="center">
               <TextSection
+                center
                 title={t('join.title')}
                 text={t('join.text')}
               />

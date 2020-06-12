@@ -1,3 +1,5 @@
+import {useResizeListener} from "@src/services/responsive";
+import {WINDOW_SIZES} from "@src/services/constants";
 
 
 export function toPixel(n) {
@@ -11,6 +13,7 @@ export function scrollTo(id) {
       element.scrollIntoView({
         behavior: "smooth",
         block: "start",
+        inline: "start",
       });
     } else {
       window.location.hash = `#${id}`;

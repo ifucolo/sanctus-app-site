@@ -1,8 +1,17 @@
 import React, {useMemo} from "react";
 import {useTranslation} from "react-i18next";
-import styled from 'styled-components';
 import CustomForm from "@src/components/custom-form";
 import * as Yup from 'yup';
+import styled from "styled-components";
+import {DESKTOP} from "@src/services/responsive";
+
+const Container = styled.div({
+  width: '100%',
+  [DESKTOP]: {
+    width: '500px',
+    paddingTop: '50px',
+  }
+})
 
 export default function JoinForm() {
   const {t} = useTranslation('contact');
@@ -48,6 +57,8 @@ export default function JoinForm() {
   ]), []);
 
   return (
-    <CustomForm inputs={inputs} />
+    <Container>
+      <CustomForm inputs={inputs} />
+    </Container>
   )
 }

@@ -15,3 +15,9 @@ export const ZINDEX = {
 }
 
 export const DESKTOP_MENU_SCROLL_TRIGGER = 200;
+
+
+export const WINDOW_SIZES = {
+  tablet: 992,
+  desktop: 1200,
+}

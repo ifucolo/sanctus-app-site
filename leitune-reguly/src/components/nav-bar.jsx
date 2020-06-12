@@ -101,7 +101,7 @@ const PlainButton = styled.button(props => ({
   zIndex: ZINDEX.Menu,
 }));
 
-export default function NavBar({children, bg, fixed}) {
+export default function NavBar({children, bg, fixed, menuHidden}) {
   const [prevScroll, setPrevScroll] = useState(0);
   const [open, setOpen] = useState(true);
   const [sticky, setSticky] = useState(false);
@@ -155,7 +155,7 @@ export default function NavBar({children, bg, fixed}) {
     <>
       <Container bg={bg} sticky={sticky} open={open}>
         {children}
-        {isDesktop && (
+        {isDesktop && !menuHidden && (
           <>
             <MenuDesktop sticky={sticky}>
               {menuItems}
@@ -178,9 +178,11 @@ NavBar.propTypes = {
   children: PropTypes.element.isRequired,
   bg: PropTypes.string,
   fixed: PropTypes.bool,
+  menuHidden: PropTypes.bool,
 }
 
 NavBar.defaultProps = {
   bg: COLORS.White,
   fixed: false,
+  menuHidden: false,
 }

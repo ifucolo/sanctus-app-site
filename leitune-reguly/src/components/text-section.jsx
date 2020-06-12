@@ -19,7 +19,7 @@ export const StyledTitle = styled.h2(p => ({
   },
 
   [DESKTOP]: {
-    textAlign: 'left',
+    textAlign: p.center ? 'center' : 'left',
     ...(p.large ? {
       fontSize: '45px',
       lineHeight: '53px',
@@ -48,7 +48,7 @@ export const StyledParagraph = styled.p(p => ({
   [DESKTOP]: {
     fontSize: '28px',
     lineHeight: '33px',
-    textAlign: 'left',
+    textAlign: p.center ? 'center' : 'left',
   }
 }));
 
@@ -71,11 +71,11 @@ const SIZES = {
   }
 }
 
-export default function TextSection({ title, text, variant, size, large }) {
+export default function TextSection({ title, text, variant, size, large, center }) {
   return (
     <Container large={large}>
-      <StyledTitle large={large} variant={variant} dangerouslySetInnerHTML={{__html: title}} />
-      {text && (<StyledParagraph {...SIZES[size]} dangerouslySetInnerHTML={{__html: text}} />)}
+      <StyledTitle large={large} center={center} variant={variant} dangerouslySetInnerHTML={{__html: title}} />
+      {text && (<StyledParagraph center={center} {...SIZES[size]} dangerouslySetInnerHTML={{__html: text}} />)}
     </Container>
   )
 }
@@ -86,11 +86,13 @@ TextSection.propTypes = {
   size: PropTypes.oneOf(['small', 'normal']),
   variant: PropTypes.oneOf(['black','white']),
   large: PropTypes.bool,
+  center: PropTypes.bool,
 };
 
 TextSection.defaultProps = {
   text: null,
   size: 'normal',
   variant: 'black',
-  large: false
+  large: false,
+  center: false,
 }

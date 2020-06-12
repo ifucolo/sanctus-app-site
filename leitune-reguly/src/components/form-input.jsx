@@ -27,6 +27,15 @@ const defaultStyle = {
   [DESKTOP]: {
     borderRadius: '5px',
     marginBottom: '20px',
+    height: '65px',
+    fontSize: '24px',
+    lineHeight: '28px',
+
+    '&.-small': {
+      height: '34px',
+      fontSize: '14px',
+      lineHeight: '16px',
+    }
   }
 }
 
@@ -45,6 +54,10 @@ const TextArea = styled.textarea({
   ...border,
   resize: 'none',
   height: '200px',
+
+  [DESKTOP]: {
+    height: '200px',
+  }
 });
 
 const Button = styled(StyledButton)({
@@ -52,11 +65,12 @@ const Button = styled(StyledButton)({
   marginBottom: '10px',
 
   [DESKTOP]: {
-    height: '25px',
     width: '100%',
-    borderRadius: '4px',
-    fontSize: '14px',
-    lineHeight: '16px',
+    '&.-small': {
+      height: '34px',
+      fontSize: '14px',
+      lineHeight: '16px',
+    }
   }
 });
 
@@ -86,7 +100,7 @@ const Label = styled.label({
 
 });
 
-export default function FormInput({ name, type, label, placeholder, ...rest }) {
+export default function FormInput({ name, type, label, placeholder, size, ...rest }) {
   const inputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(placeholder);
   const { fieldName, defaultValue, registerField, error } = useField(name);
@@ -108,7 +122,8 @@ export default function FormInput({ name, type, label, placeholder, ...rest }) {
   }
 
   const className = useMemo(() => ([
-    ...(error ? ['-error'] : [])
+    ...(error ? ['-error'] : []),
+    `-${size}`,
   ]), [error]);
 
   const inputProps = {
@@ -159,6 +174,7 @@ FormInput.propTypes = {
   placeholder: PropTypes.string,
   label: PropTypes.string,
   accept: PropTypes.string,
+  size: PropTypes.oneOf(['small', 'normal']),
   type: PropTypes.oneOf(['text', 'password', 'email', 'number', 'tel', 'textarea', 'submit', 'file']).isRequired,
 }
 
@@ -166,4 +182,5 @@ FormInput.defaultProps = {
   label: '',
   placeholder: '',
   accept: '',
+  size: 'normal',
 }

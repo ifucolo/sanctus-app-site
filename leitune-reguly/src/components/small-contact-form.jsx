@@ -26,6 +26,6 @@ export default function SmallContactForm() {
   ]), []);
 
   return (
-    <CustomForm inputs={inputs} />
+    <CustomForm size="small" inputs={inputs} />
   )
 }
