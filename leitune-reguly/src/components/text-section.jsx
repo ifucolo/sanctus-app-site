@@ -18,6 +18,14 @@ export const StyledTitle = styled.h2(p => ({
     fontStyle: 'italic',
   },
 
+  '.black': {
+    color: COLORS.Black,
+  },
+
+  '.red': {
+    color: COLORS.Red,
+  },
+
   [DESKTOP]: {
     textAlign: p.center ? 'center' : 'left',
     ...(p.large ? {

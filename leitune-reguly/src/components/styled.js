@@ -58,7 +58,9 @@ export const InnerSection = styled.div(p => ({
     alignItems: p.align || 'flex-start',
     justifyContent: p.justify || 'space-between',
     width: '100%',
-    maxWidth: '1200px'
+    marginBottom: '54px',
+    paddingTop: '40px',
+    // maxWidth: '1200px'
   }
 }));
 
@@ -107,12 +109,17 @@ export const BulletList = styled.ul(props => {
     listStyle: 'none',
     maxWidth: size.maxWidth,
     [DESKTOP]: {
-      maxWidth: size.desktop.maxWidth
+      maxWidth: size.desktop.maxWidth,
+      marginTop: '35px',
     },
     li: {
       fontSize: size.fontSize,
       lineHeight: size.lineHeight,
       color: COLORS.Gray,
+
+      em: {
+        fontStyle: 'italic',
+      },
 
       '&::before': {
         content: "'\\2022'",
@@ -151,7 +158,7 @@ export const RectangleIconsContainers = styled.div({
 });
 
 export const PageCloseWrapper = styled.div({
-  position: 'fixed',
+  position: 'absolute',
   top: "20px",
   cursor: 'pointer',
   right: '20px',
@@ -172,3 +179,16 @@ export const Center = styled.div({
     justifyContent: 'center',
   }
 });
+
+export const PlainButton = styled.button(props => ({
+  border: 'none',
+  background: 'transparent',
+  fontSize: '12px',
+  lineHeight: '12px',
+  fontWeight: 'bold',
+  width: '100%',
+  height: '40px',
+  textAlign: 'center',
+  zIndex: ZINDEX.Menu,
+  outline: 'none',
+}));

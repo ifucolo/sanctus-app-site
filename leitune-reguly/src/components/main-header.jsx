@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {COLORS, DESKTOP_MENU_SCROLL_TRIGGER, MEDIA_DEVICES} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
-import {StyledButton, StyledTitle} from "@src/components/styled";
+import {PlainButton, StyledButton, StyledTitle} from "@src/components/styled";
 import NavBar from "@src/components/nav-bar";
-import {scrollTo, toPixel} from '@src/services/utils';
+import {containBackground, scrollTo, toPixel} from '@src/services/utils';
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
 import Modal from "@src/components/modal";
@@ -24,18 +24,20 @@ const Container = styled.section({
 });
 
 const Logo = styled.div(p => ({
-  backgroundPosition: 'center center',
-  backgroundSize: 'contain',
-  backgroundRepeat: 'no-repeat',
-  backgroundImage: "url(/images/header/logo.png)",
+  ...containBackground('/images/header/logo.png'),
   width: '80px',
   height: '24px',
+  cursor: 'pointer',
 
   [DESKTOP]: {
     ...(p.sticky ? {
       backgroundImage: "url(/images/header/logo-small.png)",
-      width: '27px',
+      backgroundPosition: 'left center',
+      width: '250px',
       height: '37px',
+      '&:hover': {
+        backgroundImage: "url(/images/header/logo-small-hover.png)",
+      }
     } : {
       backgroundImage: "url(/images/header/logo-wide.png)",
       width: '250px',
@@ -57,6 +59,7 @@ const BgContainer = styled.div(p => ({
   borderBottom: `9px solid ${COLORS.Red}`,
   boxSizing: 'border-box',
   marginTop: 0,
+  position: 'relative',
 
   [DESKTOP]: {
     backgroundImage: 'url("/images/header/header-wide.png")',
@@ -129,7 +132,7 @@ const PlayTitle = styled.a(p => ({
 
     [DESKTOP]: {
       fontSize: '20px',
-      lineHeight: '23px',
+      lineHeight: '24px',
     }
   },
 
@@ -143,12 +146,22 @@ const PlayTitle = styled.a(p => ({
 
   em: {
     fontStyle: 'italic',
+  },
+
+  '&:hover': {
+    '.play-icon': {
+      ...containBackground('/images/header/play-hover.png'),
+    },
+    '.text': {
+      color: COLORS.Red,
+    }
   }
 }));
 
-const PlayIcon = styled.img({
+const PlayIcon = styled.div({
   width: '30px',
   height: '30px',
+  ...containBackground('/images/header/play.png'),
 });
 
 const Card = styled.div({
@@ -174,6 +187,26 @@ const Card = styled.div({
     margin: '20px 0'
   }
 });
+
+
+const ArrowCircle = styled.div({
+  width: '40px',
+  height: '40px',
+  background: COLORS.Red,
+  borderRadius: '50%',
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  position: 'absolute',
+  left: 'calc(50% - 20px)',
+  bottom: '-5px',
+
+  '.arrow': {
+    ...containBackground('/images/header/seta.png'),
+    width: '20px',
+    height: '20px',
+  }
+})
 
 const MODAL_VIDEO = 'MODAL_VIDEO';
 
@@ -227,7 +260,7 @@ export default function MainHeader() {
       </Modal>
       <NavBar>
         <>
-          <Logo sticky={sticky} />
+          <PlainButton style={{width: 'auto'}} onClick={scrollTo('top')}><Logo sticky={sticky} /></PlainButton>
           {!isDesktop && <MenuIcon onClick={toggleMenu} />}
         </>
       </NavBar>
@@ -242,7 +275,7 @@ export default function MainHeader() {
                 large
               />
               <PlayTitle onClick={openModal}>
-                <PlayIcon src="/images/header/play.svg" />
+                <PlayIcon className="play-icon" />
                 <span className="text" dangerouslySetInnerHTML={{__html: t('play')}} />
               </PlayTitle>
               {!isDesktop && <StyledButton onClick={scrollTo('contact')} type="button">{t('button')}</StyledButton>}
@@ -256,6 +289,7 @@ export default function MainHeader() {
             )}
           </div>
         </div>
+        {isDesktop && <ArrowCircle><div className="arrow" /></ArrowCircle>}
       </BgContainer>
     </Container>
   )

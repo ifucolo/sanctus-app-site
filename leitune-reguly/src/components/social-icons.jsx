@@ -14,7 +14,7 @@ const IconContainer = styled.div({
 
   [DESKTOP]: {
     width: '208px',
-    marginTop: '10px',
+    marginTop: '0px',
   }
 });
 

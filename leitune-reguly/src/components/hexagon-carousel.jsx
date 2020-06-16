@@ -131,11 +131,11 @@ export default function HexagonCarousel() {
           <CardImage src={modalData.image} alt={modalData.featured} />
           <TextSection
             text={modalData.text}
-            title={`${modalData.title}<br /><em>${modalData.featured}</em>`}
+            title={modalData.title}
           />
           <BulletList size="large">
             {modalData.items.map(item => {
-              return <li key={item}>{item}</li>
+              return <li key={item} dangerouslySetInnerHTML={{__html: item}}/>
             })}
           </BulletList>
         </Card>

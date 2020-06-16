@@ -29,9 +29,17 @@ const Feedback = styled.div(p => ({
   fontSize: '15px',
   lineHeight: '35px',
   height: '35px',
-  width: '100%',
   opacity: p.visible ? '1' : '0',
   transition: 'opacity 0.1s',
+  ...(p.size === 'small' ? {
+    position: 'absolute',
+    color: COLORS.White,
+    border: `1px solid ${COLORS.White}`,
+    marginTop: '26px',
+    marginLeft: '-25px',
+  } : {
+    width: '100%',
+  })
 }));
 
 export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAfterSubmit, size }) {
@@ -39,9 +47,10 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
   const {dispatch} = useContext(store);
   const [tid, setTid] = useState(0);
   const [feedback, setFeedback] = useState({
-    message: '',
+    message: 'Obrigado. Entraremos em contato em breve.',
     type: 'success',
     visible: false,
+    size,
   });
 
   useEffect(() => {
@@ -87,6 +96,7 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
           visible: true,
           message: 'Obrigado. Entraremos em contato em breve.',
           type: "success",
+          size,
         })
       }
       if (clearAfterSubmit) {
@@ -97,7 +107,8 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
       const validationErrors = {};
       if (err instanceof Yup.ValidationError) {
         err.inner.forEach(error => {
-          validationErrors[error.path] = error.message;
+          // validationErrors[error.path] = error.message; TODO - enable custom messages
+          validationErrors[error.path] = "Obrigatório";
         });
       }
       formRef.current.setErrors(validationErrors);

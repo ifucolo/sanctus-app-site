@@ -14,7 +14,7 @@ export const Container = styled.div({
 const Content = styled.div({
   width: '100%',
   maxWidth: '250px',
-  marginBottom: '40px',
+  marginBottom: '60px',
 
   [DESKTOP]: {
     display: "flex",

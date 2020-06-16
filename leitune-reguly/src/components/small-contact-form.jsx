@@ -21,7 +21,7 @@ export default function SmallContactForm() {
     {
       name: 'submit',
       type: 'submit',
-      label: t('form.submit.label'),
+      label: t('form.submit.label-small'),
     }
   ]), []);
 

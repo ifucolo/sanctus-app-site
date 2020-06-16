@@ -57,6 +57,7 @@ const Span = styled.span({
   [DESKTOP]: {
     fontSize: '22px',
     lineHeight: '26px',
+    marginTop: '20px',
   }
 });
 
@@ -80,7 +81,11 @@ const FlipSide = styled.div(p => ({
     margin: 0,
     padding: 0,
     color: COLORS.White,
-    fontStyle: 'italic'
+    fontStyle: 'italic',
+    [DESKTOP]: {
+      fontSize: '20px',
+      lineHeight: '23px',
+    }
   },
   [DESKTOP]: {
     transform: 'none',

@@ -1,5 +1,5 @@
 import React, {useEffect, useMemo, useRef, useState} from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, {func} from 'prop-types';
 import { useField } from '@unform/core';
 import styled from 'styled-components';
 import {COLORS} from "@src/services/constants";
@@ -15,9 +15,11 @@ const defaultStyle = {
   boxSizing: 'border-box',
   width: '100%',
   marginBottom: '10px',
+  outline: 'none',
+  fontWeight: 'normal',
 
   '&.-error': {
-    borderColor: COLORS.Red,
+    // borderColor: COLORS.Red,
   },
 
   '&:focus': {
@@ -95,17 +97,55 @@ const FileLabel = styled.label({
 });
 
 const FormRow = styled.div({
-
+  position: 'relative'
 });
 
 const Label = styled.label({
 
 });
 
+const Error = styled.span({
+  border: `1px solid ${COLORS.Red}`,
+  background: COLORS.White,
+  color: COLORS.Red,
+  padding: '5px 12px',
+  boxSizing: 'border-box',
+  position: 'absolute',
+  zIndex: '900',
+  whiteSpace: 'nowrap',
+  borderRadius: '8px',
+
+  // boxShadow: '0px 0px 3px 0px rgba(0,0,0,0.75)',
+  right: '3px',
+  top: '3px',
+  // transform: 'translate(0, 50%)',
+
+  // [DESKTOP]: {
+  //   boxShadow: '0px 5px 5px 0px rgba(0,0,0,0.75)',
+  //   left: '-10px',
+  //   bottom: '-3px',
+  // },
+  //
+  // '&:before': {
+  //   content: '""',
+  //   width: '15px',
+  //   height: '15px',
+  //   borderTop: `1px solid ${COLORS.Red}`,
+  //   borderRight: `1px solid ${COLORS.Red}`,
+  //   backgroundColor: COLORS.White,
+  //   display: 'inline-block',
+  //   position: 'absolute',
+  //   top: '5px',
+  //   left: '-7px',
+  //   transform: 'rotate(-135deg)'
+  // }
+})
+
 export default function FormInput({ name, type, label, placeholder, size, ...rest }) {
   const inputRef = useRef(null);
   const [selectedFile, setSelectedFile] = useState(placeholder);
-  const { fieldName, defaultValue, registerField, error } = useField(name);
+  const [timeoutId, setTimeoutId] = useState(0);
+  const { fieldName, defaultValue, registerField, error, clearError } = useField(name);
 
   useEffect(() => {
     registerField({
@@ -115,12 +155,24 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
     });
   }, [fieldName, registerField]);
 
+  useEffect(() => {
+    if (error) {
+      if (timeoutId) clearTimeout(timeoutId);
+      const id = setTimeout(() => clearError(), 5000);
+      setTimeoutId(id);
+    }
+  }, [error])
+
   function onChange(e) {
     if (type === 'file') {
       console.dir(e.target);
       const [file] = e.target.files;
       setSelectedFile(file ? file.name : placeholder);
     }
+  }
+
+  function onFocus(e) {
+    clearError();
   }
 
   const className = useMemo(() => ([
@@ -136,6 +188,8 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
     type,
     ref: inputRef,
     onChange,
+    onFocus,
+    novalidate: 'novalidate'
   }
 
   const showLabel = useMemo(() => !['file', 'submit'].includes(type), [type]);
@@ -167,6 +221,7 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
     <FormRow>
       {showLabel && label && <Label>{label}</Label>}
       {createInput()}
+      {error && <Error>{error}</Error>}
     </FormRow>
   )
 }

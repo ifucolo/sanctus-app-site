@@ -37,7 +37,7 @@ export default function Home() {
     <div className="container">
       <MainSection>
         <>
-          <MainHeader id="top" />
+          <MainHeader />
           <Section>
             <InnerSection id="about">
               <div>
@@ -47,7 +47,7 @@ export default function Home() {
                 />
                 {isDesktop && (
                   <Link href="/about">
-                    <StyledButton type="button" style={{marginTop: '140px'}}>{t('rectangle.button.text')}</StyledButton>
+                    <StyledButton type="button" style={{marginTop: '143px'}}>{t('rectangle.button.text')}</StyledButton>
                   </Link>
                 )}
               </div>

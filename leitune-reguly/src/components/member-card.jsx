@@ -83,8 +83,8 @@ const FlipSide = styled.div(p => ({
     color: COLORS.White,
     fontStyle: 'italic',
     [DESKTOP]: {
-      fontSize: '18px',
-      lineHeight: '21px',
+      fontSize: '22px',
+      lineHeight: '26px',
     }
   }
 }));

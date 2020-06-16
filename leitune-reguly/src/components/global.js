@@ -80,8 +80,10 @@ export const GlobalStyle = createGlobalStyle`
 
 
   body {
-    font-family: 'Roboto Condensed';
     background: ${COLORS.LightGray};
   }
 
+  * {
+    font-family: 'Roboto Condensed';
+  }
 `;

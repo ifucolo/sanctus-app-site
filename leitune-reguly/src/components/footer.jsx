@@ -93,15 +93,15 @@ export default function Footer() {
   const phones = useMemo(() => [
     {
       title: "São Paulo, SP",
-      number: "+55 (11) 123456-6789"
+      number: "+55 (11) 97719-7550"
     },
     {
       title: "Pelotas, RS",
-      number: "+55 (53) 99126-5617"
+      number: "+55 (53) 98119-4198"
     },
     {
       title: "Amsterdam, NL",
-      number: "+31 (6) 644630812"
+      number: "+ 31 (6) 4463-0812"
     }
   ], []);
 

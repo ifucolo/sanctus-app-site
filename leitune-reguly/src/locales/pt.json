@@ -24,7 +24,7 @@
     },
     "contact": {
       "title": "Fale <br /><em>conosco</em>",
-      "text": "Ficou com alguma dúvida? Entre em contato e logo retornaremos para desenvolvermos, juntos, a solução certa para o seu problema. Prestamos serviços para todo o Brasil."
+      "text": "Ficou com alguma dúvida? Entre em contato e logo retornaremos para desenvolvermos juntos a solução certa para o seu problema. Prestamos serviços para todo o Brasil."
     },
     "designlaw": {
       "title": "Por que unir design e direito é <em>eficiente?</em>",
@@ -73,7 +73,7 @@
         "placeholder": "Nome"
       },
       "email": {
-        "placeholder": "E-Mail"
+        "placeholder": "E-mail"
       },
       "phone": {
         "placeholder": "Telefone (opcional)"
@@ -82,7 +82,8 @@
         "placeholder": "Mensagem (opcional)"
       },
       "submit":{
-        "label": "Vamos inovar juntos"
+        "label": "Vamos inovar juntos",
+        "label-small": "Enviar"
       },
       "file": {
         "label": "Anexar CV",
@@ -110,7 +111,7 @@
   },
   "carousel": {
     "civil": {
-      "title": "Direito",
+      "title": "Direito <em>Civil</em>",
       "featured": "Civil",
       "items": [
         "Representação em inquéritos civis e ações judiciais em geral;",
@@ -120,7 +121,7 @@
       ]
     },
     "consumer": {
-      "title": "Direito",
+      "title": "Direito <em>Consumidor</em>",
       "featured": "Consumidor",
       "items": [
         "Atuação perante órgãos de defesa do consumidor;",
@@ -129,7 +130,7 @@
       ]
     },
     "business": {
-      "title": "Direito",
+      "title": "Direito <em>Empresarial</em>",
       "featured": "Empresarial",
       "items": [
         "Representação em cobranças judiciais e extrajudiciais;",
@@ -137,31 +138,31 @@
         "Acompanhamento durante a constituição, fusão, cisão e extinção de empresas;",
         "Estruturação societária;",
         "Mediação empresarial para a resolução do conflito de forma amigável;",
-        "Due diligence;",
+        "<em>Due diligence</em>;",
         "Registro e acompanhamento de marcas e patentes."
       ]
     },
     "penal": {
-      "title": "Direito",
+      "title": "Direito <em>Penal Empresarial</em>",
       "featured": "Penal Empresarial",
       "items": [
-        "Criminal compliance para evitar a violação de normas criminais pela empresa;",
+        "<em>Criminal compliance</em> para evitar a violação de normas criminais pela empresa;",
         "Representação em inquéritos policias, procedimentos administrativos e ações judiciais."
       ]
     },
     "startup": {
-      "title": "Direito",
-      "featured": "Startups e inovação",
+      "title": "<em><span class=\"black\">Startups</span></em> <span class=\"red\">e inovação</span>",
+      "featured": "Startups",
       "items": [
-        "Assessoria jurídica de forma personalizada para startups;",
+        "Assessoria jurídica de forma personalizada para <em>startups</em>;",
         "Estudo de viabilidade jurídica do negócio;",
-        "Elaboração de contratos e estatutos sociais, acordos de sócios, acordos de confidencialidade, contratos de vesting, stock option, etc;",
+        "Elaboração de contratos e estatutos sociais, acordos de sócios, acordos de confidencialidade, contratos de <em>vesting</em>, <em>stock option</em>, etc;",
         "Planejamento tributário para a redução dos custos fiscais;",
-         "Registro e acompanhamento de marcas e patentes."
+        "Registro e acompanhamento de marcas e patentes."
       ]
     },
     "labor": {
-      "title": "Direito",
+      "title": "Direito <em>Trabalhista</em>",
       "featured": "Trabalhista",
       "items": [
         "Defesa do empregador em ações judiciais;",
@@ -171,7 +172,7 @@
       ]
     },
     "tributary": {
-      "title": "Direito",
+      "title": "Direito <em>Tributário</em>",
       "featured": "Tributário",
       "items": [
         "Consultoria tributária para pessoas físicas e jurídicas;",
@@ -185,7 +186,7 @@
     }
   },
   "footer": {
-    "disclaimer": "Direitos autorais © 2020 Leitune e Reguly. Todos os direitos reservados."
+    "disclaimer": "Direitos autorais © 2020 Leitune & Reguly. Todos os direitos reservados."
   },
   "documents": {
     "before": [
