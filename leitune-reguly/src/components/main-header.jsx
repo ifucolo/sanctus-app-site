@@ -260,7 +260,7 @@ export default function MainHeader() {
       </Modal>
       <NavBar>
         <>
-          <PlainButton style={{width: 'auto'}} onClick={scrollTo('top')}><Logo sticky={sticky} /></PlainButton>
+          <PlainButton style={{width: 'auto', height: 'auto'}} onClick={scrollTo('top')}><Logo sticky={sticky} /></PlainButton>
           {!isDesktop && <MenuIcon onClick={toggleMenu} />}
         </>
       </NavBar>

@@ -32,6 +32,6 @@ export function scrollTo(id) {
 export function isInViewport (elem) {
   const bounding = elem.getBoundingClientRect();
   return (
-    bounding.top >= 0 && bounding.top <= (window.pageYOffset)
+    bounding.top >= -200 && bounding.top <= (window.innerHeight - 300)
   );
 };

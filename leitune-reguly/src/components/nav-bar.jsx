@@ -112,6 +112,7 @@ export default function NavBar({children, bg, fixed, menuHidden}) {
 
   function handleScroll() {
     const sections = ["about", "speciality", "team", "contact"];
+    console.log(document.getElementById('speciality').getBoundingClientRect());
     const selected = sections.find(section => {
       const elem = document.getElementById(section);
       return isInViewport(elem);
