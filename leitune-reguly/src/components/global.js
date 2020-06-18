@@ -86,4 +86,13 @@ export const GlobalStyle = createGlobalStyle`
   * {
     font-family: 'Roboto Condensed';
   }
+
+  @keyframes desktopMenu {
+    0% {
+      top: -60px;
+    }
+    100% {
+      top: 0px;
+    }
+  }
 `;

@@ -24,7 +24,7 @@
     },
     "contact": {
       "title": "Fale <br /><em>conosco</em>",
-      "text": "Ficou com alguma dúvida? Entre em contato e logo retornaremos para desenvolvermos juntos a solução certa para o seu problema. Prestamos serviços para todo o Brasil."
+      "text": "Ficou com alguma dúvida? Entre em contato e logo retornaremos para desenvolvermos juntos a solução certa para o seu problema.<br />Prestamos serviços para todo o Brasil."
     },
     "designlaw": {
       "title": "Por que unir design e direito é <em>eficiente?</em>",
@@ -97,7 +97,7 @@
       "text": "O direito para leigos, e não para juristas."
     },
     "wifi": {
-      "title": "Escritório Virtual",
+      "title": "Escritório virtual",
       "text": "Seu atendimento jurídico a apenas um clique"
     },
     "lightbulb": {
@@ -105,7 +105,7 @@
       "text": "+ Qualidade\n- Tempo\n- Custo"
     },
     "hosting": {
-      "title": "Advocacia Preventiva",
+      "title": "Advocacia preventiva",
       "text": "Planeje agora e diminua os riscos depois."
     }
   },
@@ -121,7 +121,7 @@
       ]
     },
     "consumer": {
-      "title": "Direito <em>Consumidor</em>",
+      "title": "Direito do <em>Consumidor</em>",
       "featured": "Consumidor",
       "items": [
         "Atuação perante órgãos de defesa do consumidor;",
@@ -151,7 +151,7 @@
       ]
     },
     "startup": {
-      "title": "<em><span class=\"black\">Startups</span></em> <span class=\"red\">e inovação</span>",
+      "title": "<em><span class=\"black\">Startups</span></em> e <em><span class=\"red\">inovação</span></em>",
       "featured": "Startups",
       "items": [
         "Assessoria jurídica de forma personalizada para <em>startups</em>;",

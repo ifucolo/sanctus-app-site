@@ -36,6 +36,7 @@ const Image = styled.img({
 const Arrow = styled.img({
   [DESKTOP]: {
     width: '85px',
+    marginTop: '40px',
   }
 })
 

@@ -38,7 +38,7 @@ export const Section = styled.section({
   boxSizing: 'border-box',
 
   [DESKTOP]: {
-    margin: '80px 150px',
+    margin: '0px 150px',
   }
 });
 
@@ -59,7 +59,7 @@ export const InnerSection = styled.div(p => ({
     justifyContent: p.justify || 'space-between',
     width: '100%',
     marginBottom: '54px',
-    paddingTop: '40px',
+    paddingTop: '100px',
     // maxWidth: '1200px'
   }
 }));
@@ -79,6 +79,7 @@ export const BulletList = styled.ul(props => {
       maxWidth: '80px',
       fontSize: '10px',
       lineHeight: '12px',
+      marginBottom: '10px',
       desktop: {
         maxWidth: '240px',
       },
@@ -92,6 +93,7 @@ export const BulletList = styled.ul(props => {
       maxWidth: '100%',
       fontSize: '16px',
       lineHeight: '18px',
+      marginBottom: '15px',
       desktop: {
         maxWidth: '500px',
       },
@@ -138,6 +140,7 @@ export const BulletList = styled.ul(props => {
       [DESKTOP]: {
         fontSize: '26px',
         lineHeight: '30px',
+        marginBottom: size.marginBottom,
       }
     },
   }
@@ -191,4 +194,5 @@ export const PlainButton = styled.button(props => ({
   textAlign: 'center',
   zIndex: ZINDEX.Menu,
   outline: 'none',
+  cursor: 'pointer',
 }));

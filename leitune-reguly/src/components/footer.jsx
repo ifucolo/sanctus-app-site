@@ -118,7 +118,9 @@ export default function Footer() {
         </A>
       ))}
       </Content>
-      <SocialIcons variant="red" />
+      <div style={{marginLeft: '-10px'}}>
+        <SocialIcons variant="red" />
+      </div>
       <Disclaimer>{t('disclaimer')}</Disclaimer>
     </Container>
   );

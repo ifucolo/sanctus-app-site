@@ -14,12 +14,11 @@ const defaultStyle = {
   padding: '6px',
   boxSizing: 'border-box',
   width: '100%',
-  marginBottom: '10px',
   outline: 'none',
   fontWeight: 'normal',
 
   '&.-error': {
-    // borderColor: COLORS.Red,
+    borderColor: COLORS.Red,
   },
 
   '&:focus': {
@@ -28,7 +27,6 @@ const defaultStyle = {
 
   [DESKTOP]: {
     borderRadius: '5px',
-    marginBottom: '20px',
     height: '65px',
     fontSize: '24px',
     lineHeight: '28px',
@@ -97,7 +95,11 @@ const FileLabel = styled.label({
 });
 
 const FormRow = styled.div({
-  position: 'relative'
+  position: 'relative',
+  marginBottom: '10px',
+  [DESKTOP]: {
+    marginBottom: '20px',
+  }
 });
 
 const Label = styled.label({
@@ -105,41 +107,21 @@ const Label = styled.label({
 });
 
 const Error = styled.span({
-  border: `1px solid ${COLORS.Red}`,
-  background: COLORS.White,
   color: COLORS.Red,
-  padding: '5px 12px',
   boxSizing: 'border-box',
   position: 'absolute',
   zIndex: '900',
   whiteSpace: 'nowrap',
   borderRadius: '8px',
-
-  // boxShadow: '0px 0px 3px 0px rgba(0,0,0,0.75)',
-  right: '3px',
-  top: '3px',
-  // transform: 'translate(0, 50%)',
-
-  // [DESKTOP]: {
-  //   boxShadow: '0px 5px 5px 0px rgba(0,0,0,0.75)',
-  //   left: '-10px',
-  //   bottom: '-3px',
-  // },
-  //
-  // '&:before': {
-  //   content: '""',
-  //   width: '15px',
-  //   height: '15px',
-  //   borderTop: `1px solid ${COLORS.Red}`,
-  //   borderRight: `1px solid ${COLORS.Red}`,
-  //   backgroundColor: COLORS.White,
-  //   display: 'inline-block',
-  //   position: 'absolute',
-  //   top: '5px',
-  //   left: '-7px',
-  //   transform: 'rotate(-135deg)'
-  // }
-})
+  height: '100%',
+  right: '10px',
+  top: '0px',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  fontSize: '14px',
+  lineHeight: '16px',
+});
 
 export default function FormInput({ name, type, label, placeholder, size, ...rest }) {
   const inputRef = useRef(null);
@@ -155,13 +137,13 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
     });
   }, [fieldName, registerField]);
 
-  useEffect(() => {
-    if (error) {
-      if (timeoutId) clearTimeout(timeoutId);
-      const id = setTimeout(() => clearError(), 5000);
-      setTimeoutId(id);
-    }
-  }, [error])
+  // useEffect(() => {
+  //   if (error) {
+  //     if (timeoutId) clearTimeout(timeoutId);
+  //     const id = setTimeout(() => clearError(), 5000);
+  //     setTimeoutId(id);
+  //   }
+  // }, [error])
 
   function onChange(e) {
     if (type === 'file') {

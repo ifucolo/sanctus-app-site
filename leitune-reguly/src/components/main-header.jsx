@@ -1,18 +1,15 @@
-import React, {useContext, useEffect, useMemo, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
-import {COLORS, DESKTOP_MENU_SCROLL_TRIGGER, MEDIA_DEVICES} from "@src/services/constants";
+import {COLORS, DESKTOP_MENU_SCROLL_TRIGGER} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
-import {PlainButton, StyledButton, StyledTitle} from "@src/components/styled";
+import {PlainButton, StyledButton} from "@src/components/styled";
 import NavBar from "@src/components/nav-bar";
 import {containBackground, scrollTo, toPixel} from '@src/services/utils';
-import {store} from "@src/store";
-import {ACTION_TYPES} from "@src/store/actions";
 import Modal from "@src/components/modal";
 import {useScrollListener} from "@src/services/scroll";
 import TextSection from "@src/components/text-section";
-import {DESKTOP, media, useResizeListener} from "@src/services/responsive";
-import CustomForm from "@src/components/custom-form";
+import {DESKTOP, useResizeListener} from "@src/services/responsive";
 import {useController} from "@src/store/controllers";
 import SmallContactForm from "@src/components/small-contact-form";
 
@@ -23,38 +20,16 @@ const Container = styled.section({
   boxSizing: 'border-box',
 });
 
-const Logo = styled.div(p => ({
-  ...containBackground('/images/header/logo.png'),
-  width: '80px',
-  height: '24px',
-  cursor: 'pointer',
-
-  [DESKTOP]: {
-    ...(p.sticky ? {
-      backgroundImage: "url(/images/header/logo-small.png)",
-      backgroundPosition: 'left center',
-      width: '250px',
-      height: '37px',
-      '&:hover': {
-        backgroundImage: "url(/images/header/logo-small-hover.png)",
-      }
-    } : {
-      backgroundImage: "url(/images/header/logo-wide.png)",
-      width: '250px',
-      minWidth: '200px',
-      height: '105px',
-    })
-  },
-}));
-
 const BgContainer = styled.div(p => ({
   width: '100%',
   height: 640,
+
   backgroundImage: 'url("/images/header/header.png")',
-  backgroundPosition: "center center",
-  backgroundRepeat: "no-repeat",
-  backgroundAttachment: "initial",
-  backgroundSize: "cover",
+  backgroundAttachment: 'fixed',
+  backgroundPosition: 'center',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'cover',
+
   backgroundColor: '#000',
   borderBottom: `9px solid ${COLORS.Red}`,
   boxSizing: 'border-box',
@@ -220,21 +195,12 @@ export default function MainHeader() {
   const [sticky, setSticky] = useState(false);
 
   const openModal = () => controller.openModal(MODAL_VIDEO);
-  const toggleMenu = () => {
-    scrollTo('top')();
-    if (state.nav.open) {
-      controller.closeMenu();
-    } else {
-      controller.openMenu();
-    }
-    scrollTo('')();
-  }
 
   function handleScroll() {
-    const offset = Math.min(pageYOffset/4, isDesktop ? 100 : 75);
+    const offset = Math.min(pageYOffset/3, 1000);
     const base = isDesktop ? 260 : 220
-    bgContainerRef.current.style.marginTop = toPixel(-offset);
-    contentRef.current.style.top = toPixel(base + offset);
+    bgContainerRef.current.style.backgroundPositionY = toPixel(-offset);
+    // contentRef.current.style.top = toPixel(base + offset);
     if (sticky && pageYOffset < DESKTOP_MENU_SCROLL_TRIGGER) {
       setSticky(false);
     }
@@ -258,12 +224,7 @@ export default function MainHeader() {
           allowFullScreen
         />
       </Modal>
-      <NavBar>
-        <>
-          <PlainButton style={{width: 'auto', height: 'auto'}} onClick={scrollTo('top')}><Logo sticky={sticky} /></PlainButton>
-          {!isDesktop && <MenuIcon onClick={toggleMenu} />}
-        </>
-      </NavBar>
+      <NavBar />
       <BgContainer ref={bgContainerRef}>
         <div className="mask">
           <div className="content" ref={contentRef}>
@@ -289,7 +250,13 @@ export default function MainHeader() {
             )}
           </div>
         </div>
-        {isDesktop && <ArrowCircle><div className="arrow" /></ArrowCircle>}
+        {isDesktop && (
+          <PlainButton onClick={scrollTo('about')}>
+            <ArrowCircle>
+              <div className="arrow" />
+            </ArrowCircle>
+          </PlainButton>
+        )}
       </BgContainer>
     </Container>
   )
