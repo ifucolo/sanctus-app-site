@@ -85,6 +85,14 @@ const Disclaimer = styled.span({
 
 const A = styled.a({
   textDecoration: 'none'
+});
+
+const SocialIconsContainer = styled.div({
+  marginLeft: '-10px',
+  width: '100%',
+  [DESKTOP]: {
+    width: 'auto',
+  }
 })
 
 export default function Footer() {
@@ -118,9 +126,9 @@ export default function Footer() {
         </A>
       ))}
       </Content>
-      <div style={{marginLeft: '-10px'}}>
+      <SocialIconsContainer>
         <SocialIcons variant="red" />
-      </div>
+      </SocialIconsContainer>
       <Disclaimer>{t('disclaimer')}</Disclaimer>
     </Container>
   );

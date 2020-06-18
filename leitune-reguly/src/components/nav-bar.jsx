@@ -114,7 +114,7 @@ const MenuDesktop = styled.ul(p => ({
 const MenuMobile = styled.ul(props => ({
   width: '100%',
   background: COLORS.White,
-  marginTop: '44px',
+  paddingTop: '44px',
   zIndex: ZINDEX.Menu,
   left: 0,
   transition: 'height 0.3s',

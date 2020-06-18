@@ -89,7 +89,8 @@ const PlayTitle = styled.a(p => ({
   flexDirection: 'column',
   justifyContent: 'center',
   alignItems: 'center',
-  marginBottom: '100px',
+  marginBottom: '80px',
+  marginTop: '20px',
   cursor: 'pointer',
 
   [DESKTOP]: {
