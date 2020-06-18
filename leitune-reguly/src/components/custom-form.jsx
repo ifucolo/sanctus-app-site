@@ -37,6 +37,7 @@ const Feedback = styled.div(p => ({
     border: `1px solid ${COLORS.White}`,
     marginTop: '26px',
     marginLeft: '-25px',
+    width: '260px',
   } : {
     width: '100%',
   })
@@ -94,7 +95,7 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
         // });
         setFeedback({
           visible: true,
-          message: 'Obrigado. Entraremos em contato em breve.',
+          message: size === 'small' ? 'Obrigado!' : 'Obrigado. Entraremos em contato em breve.',
           type: "success",
           size,
         })
