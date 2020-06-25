@@ -108,7 +108,7 @@ export default function SocialIcons({variant}) {
   return (
     <IconContainer>
       {icons.map(icon => (
-        <a key={icon.image} href={icon.href} target="_blank">
+        <a key={icon.image} href={icon.href} target="_blank" rel="noreferrer">
           <Icon image={icon.image} hover={icon.hover} />
         </a>
       ))}
