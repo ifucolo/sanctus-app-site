@@ -1,5 +1,5 @@
 import {useContext} from "react";
-import {store} from "@src/store";
+import {store} from "@src/store/index";
 import {ACTION_TYPES} from "@src/store/actions";
 
 export function useController() {

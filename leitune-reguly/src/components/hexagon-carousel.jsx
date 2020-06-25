@@ -135,7 +135,7 @@ export default function HexagonCarousel() {
           />
           <BulletList size="large">
             {modalData.items.map(item => {
-              return <li key={item} dangerouslySetInnerHTML={{__html: item}}/>
+              return <li key={item} dangerouslySetInnerHTML={{__html: item}} />
             })}
           </BulletList>
         </Card>

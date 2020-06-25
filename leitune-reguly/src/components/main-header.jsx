@@ -38,6 +38,7 @@ const BgContainer = styled.div(p => ({
 
   [DESKTOP]: {
     backgroundImage: 'url("/images/header/header-wide.png")',
+    backgroundSize: 'contain',
     height: '726px',
     borderBottom: `16px solid ${COLORS.Red}`,
   },

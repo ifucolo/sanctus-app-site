@@ -68,6 +68,10 @@ const LocationPhone = styled.h4({
   fontSize: '20px',
   lineHeight: '23px',
   color: COLORS.Gray,
+  [DESKTOP]: {
+    fontSize: '24px',
+    lineHeight: '28px',
+  }
 });
 
 const Disclaimer = styled.span({
@@ -116,14 +120,14 @@ export default function Footer() {
   return (
     <Container>
       <Content>
-      <A href="mailto:hello@leitunereguly.com">
-        <SpanEmail>hello@leitunereguly.com</SpanEmail>
-      </A>
-      {phones.map(phone => (
-        <A href={`tel:${phone.number}`} key={phone.number}>
-          <LocationName>{phone.title}</LocationName>
-          <LocationPhone>{phone.number}</LocationPhone>
+        <A href="mailto:hello@leitunereguly.com">
+          <SpanEmail>hello@leitunereguly.com</SpanEmail>
         </A>
+        {phones.map(phone => (
+          <A href={`tel:${phone.number}`} key={phone.number}>
+            <LocationName>{phone.title}</LocationName>
+            <LocationPhone>{phone.number}</LocationPhone>
+          </A>
       ))}
       </Content>
       <SocialIconsContainer>

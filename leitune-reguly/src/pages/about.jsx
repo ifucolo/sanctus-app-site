@@ -56,7 +56,7 @@ export default function About() {
         <>
           <Link href="/">
             <PageCloseWrapper>
-              <CloseIcon/>
+              <CloseIcon />
             </PageCloseWrapper>
           </Link>
           <TopImage src="/images/about/design-law.svg" />

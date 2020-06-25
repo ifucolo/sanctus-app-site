@@ -54,37 +54,13 @@ table {
 export const GlobalStyle = createGlobalStyle`
   ${resetCss}
 
-  @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('/fonts/roboto-condensed/RobotoCondensed-Regular.ttf');
-  }
-
-  @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('/fonts/roboto-condensed/RobotoCondensed-Bold.ttf');
-    font-weight: bold;
-  }
-
-  @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('/fonts/roboto-condensed/RobotoCondensed-BoldItalic.ttf');
-    font-weight: bold;
-    font-style: italic;
-  }
-
-  @font-face {
-    font-family: 'Roboto Condensed';
-    src: url('/fonts/roboto-condensed/RobotoCondensed-Italic.ttf');
-    font-style: italic;
-  }
-
-
   body {
     background: ${COLORS.LightGray};
   }
 
   * {
-    font-family: 'Roboto Condensed';
+    font-family: 'Roboto Condensed', sans-serif!important;
+    -webkit-font-smoothing: antialiased;
   }
 
   @keyframes desktopMenu {

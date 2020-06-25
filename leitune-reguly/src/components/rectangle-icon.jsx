@@ -147,7 +147,7 @@ export default function RectangleIcon({ variant }) {
       onMouseLeave={() => isDesktop && setEnabled(false)}
     >
       <Content>
-        <Image src={data.image} />
+        <Image src={data.image} alt={data.title} />
         <Span>{data.title}</Span>
         <FlipSide enabled={enabled}>
           {data.text.split('\n').map(i => <p key={i}>{i}</p>)}

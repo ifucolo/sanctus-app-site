@@ -32,7 +32,7 @@ export default function Join() {
         <>
           <Link href="/">
             <PageCloseWrapper>
-              <CloseIcon/>
+              <CloseIcon />
             </PageCloseWrapper>
           </Link>
           <TopImage src="/images/members/sport-team.png" />

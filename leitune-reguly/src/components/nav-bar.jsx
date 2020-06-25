@@ -70,8 +70,10 @@ const Container = styled.div(p => ({
       top: '-60px',
       height: '60px',
       background: COLORS.White,
-      padding: '8px 150px 0px 150px',
+      padding: '0px 150px 0px 150px',
       animation: 'desktopMenu 0.3s ease 0s 1 normal forwards',
+      display: 'flex',
+      alignItems: 'center',
     } : {
       // animation: 'desktopMenu 2s ease normal backwards',
     }),

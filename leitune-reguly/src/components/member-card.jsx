@@ -139,7 +139,7 @@ export function MemberCard({ name, photo, tagline, description, linkedin }) {
       onMouseEnter={() => isDesktop && setEnabled(true)}
       onMouseLeave={() => isDesktop && setEnabled(false)}
     >
-      <Photo src={photo} className="photo" />
+      <Photo src={photo} className="photo" alt={name} />
       <Name>
         {name}
         <br />
@@ -149,7 +149,7 @@ export function MemberCard({ name, photo, tagline, description, linkedin }) {
         <p dangerouslySetInnerHTML={{__html: description}} />
       </FlipSide>
       <a href={linkedin} target="_blank">
-        <Icon src={enabled ? "/images/footer/linkedin-white.png" : "/images/footer/linkedin-red.png"} className="linkedin-icon" />
+        <Icon src={enabled ? "/images/footer/linkedin-white.png" : "/images/footer/linkedin-red.png"} className="linkedin-icon" alt="linkedIn" />
       </a>
     </Item>
   )

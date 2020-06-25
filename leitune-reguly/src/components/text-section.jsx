@@ -82,7 +82,7 @@ const SIZES = {
 export default function TextSection({ title, text, variant, size, large, center }) {
   return (
     <Container large={large}>
-      <StyledTitle large={large} center={center} variant={variant} dangerouslySetInnerHTML={{__html: title}} />
+      <StyledTitle large={large} as={large ? "h1" : "h2"} center={center} variant={variant} dangerouslySetInnerHTML={{__html: title}} />
       {text && (<StyledParagraph center={center} {...SIZES[size]} dangerouslySetInnerHTML={{__html: text}} />)}
     </Container>
   )

@@ -234,7 +234,7 @@ export default function Honeycomb() {
           <br />
           <BulletList size="large">
             {modalData.items.map(item => {
-              return <li key={item} dangerouslySetInnerHTML={{__html: item}}/>
+              return <li key={item} dangerouslySetInnerHTML={{__html: item}} />
             })}
           </BulletList>
         </Card>
@@ -245,7 +245,7 @@ export default function Honeycomb() {
             const {card, label} = ITEM_POSITIONS[i] || {};
             return (
               <>
-                <Item key={label} position={card} onClick={() => toggleModal(item)} >
+                <Item key={label} position={card} onClick={() => toggleModal(item)}>
                   <HoverHelper />
                   <Icon className="-no-hover" src={item.image} alt={item.featured} />
                   <LearnMore className="-hover">{t('hover.button')}</LearnMore>

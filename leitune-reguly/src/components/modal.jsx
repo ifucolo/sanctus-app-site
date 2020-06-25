@@ -5,6 +5,7 @@ import {COLORS, ZINDEX} from "@src/services/constants";
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
 import CloseIcon from '@material-ui/icons/Close';
+import {DESKTOP} from "@src/services/responsive";
 
 const Overlay = styled.div(p => ({
   position: 'fixed',
@@ -28,6 +29,9 @@ const Card = styled.div({
   flexDirection: 'row',
   justifyContent: 'center',
   alignItems: 'center',
+  [DESKTOP]: {
+    width: 'auto',
+  }
 });
 
 export default function Modal({children, name}) {

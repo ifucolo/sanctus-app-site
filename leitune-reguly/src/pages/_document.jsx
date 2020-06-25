@@ -1,4 +1,4 @@
-/* eslint-disable react/react-in-jsx-scope */
+/* eslint-disable react/react-in-jsx-scope,max-len */
 import React from "react";
 import Document, {Head, Html, Main, NextScript} from 'next/document';
 import {ServerStyleSheet} from 'styled-components';
@@ -25,9 +25,24 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <title>Leitune & Reguly</title>
+          <meta charSet="UTF-8" />
+          <meta name="keywords" content="Advogado, Escritório virtual, Atendimento online, Consulta via telefone Whatsapp Google Meet, Assessoria jurídica e consultoria para pessoas físicas e empresas, Áreas de atuação: Direito Empresarial Cível Tributário Trabalhista Consumidor Penal Empresarial startups e inovação, Consultoria tributária para pessoas físicas e jurídicas, Planejamento tributário para a redução dos custos fiscais, Simples Nacional, Lucro presumido, Lucro real, Regularização de pendências e obtenção de certidões negativas, Representação em ações judiciais movidas pelo Fisco, Representação em cobranças judiciais e extrajudiciais, Elaboração e revisão de contratos ou estatutos sociais, Acompanhamento durante a constituição fusão cisão e extinção de empresas, Estruturação societária, Sociedade Limitada, Sociedade anônima, Mediação empresarial para a resolução do conflito de forma amigável, Due diligence, Registro e acompanhamento de marcas e patentes, Representação em inquéritos civis e ações judiciais em geral, Elaboração e revisão de contratos cíveis, Prevenção de ações judiciais, Planejamento sucessório para a preservação patrimonial, Defesa do empregador em ações judiciais, Prevenção de ações trabalhistas, Revisão e elaboração de contratos trabalhistas, Planejamento trabalhista para a redução de custos, Atuação perante órgãos de defesa do consumidor, Consultoria e análise preventiva para minimização de riscos nas relações de consumo, Elaboração e revisão de licenças de uso termos de uso políticas de cookies e políticas de privacidade, Criminal compliance para evitar a violação de normas criminais pela empresa, Representação em inquéritos policiais procedimentos administrativos e ações judiciais, Elaboração de contratos e estatutos sociais acordos de sócios memorandos de entendimento acordos de confidencialidade contratos de vesting stock option mútuo conversível contratos de participação etc, Proteção de Dados, Cap Table, Term Sheet, Investimento, E-commerce, Fintechs, Insurtechs, Martketplace" />
           <link rel="icon" href="/favicon.png" />
-          {/* Step 5: Output the styles in the head  */}
+          <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
+          <title>Leitune & Reguly Advogados | Escritório virtual</title>
+          <meta name="description" content="Nosso escritório trabalha para melhorar a sua experiência com o direito, combinando conhecimento jurídico e tecnologia para alcançar resultados mais eficientes" />
+          <meta name="robots" content="index, follow" />
+          <meta property="og:locale" content="pt_BR" />
+          <meta property="og:url" content="https://leitunereguly.com" />
+          <meta property="og:title" content="Leitune & Reguly Advogados | Escritório virtual" />
+          <meta property="og:site_name" content="Leitune & Reguly Advogados" />
+          <meta property="og:description" content="Nosso escritório trabalha para melhorar a sua experiência com o direito, combinando conhecimento jurídico e tecnologia para alcançar resultados mais eficientes" />
+          <meta property="og:image" content="https://leitunereguly.com/images/ogimage.jpeg" />
+          <meta property="og:image:type" content="image/jpeg" />
+          <meta property="og:image:width" content="1080" />
+          <meta property="og:image:height" content="1080" />
+          <meta property="og:type" content="website" />
+          <link rel="canonical" href="https://leitunereguly.com" />
           {this.props.styleTags}
         </Head>
         <body id="top">
