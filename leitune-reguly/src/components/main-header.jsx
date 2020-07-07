@@ -26,7 +26,6 @@ const BgContainer = styled.div(p => ({
   height: 640,
 
   backgroundImage: 'url("/images/header/header.png")',
-  backgroundAttachment: 'fixed',
   backgroundPosition: 'center',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'cover',
@@ -39,6 +38,7 @@ const BgContainer = styled.div(p => ({
 
   [DESKTOP]: {
     backgroundImage: 'url("/images/header/header-wide.png")',
+    backgroundAttachment: 'fixed',
     backgroundSize: 'cover',
     height: '726px',
     borderBottom: `16px solid ${COLORS.Red}`,
@@ -201,9 +201,10 @@ export default function MainHeader() {
   const closeModal = () => controller.closeModal();
 
   function handleScroll() {
-    const offset = Math.min(pageYOffset/3, 1000);
-    const base = isDesktop ? 260 : 220
-    bgContainerRef.current.style.backgroundPositionY = toPixel(-offset);
+    if (isDesktop) {
+      const offset = Math.min(pageYOffset / 3, 1000);
+      bgContainerRef.current.style.backgroundPositionY = toPixel(-offset);
+    }
     // contentRef.current.style.top = toPixel(base + offset);
     if (sticky && pageYOffset < DESKTOP_MENU_SCROLL_TRIGGER) {
       setSticky(false);
