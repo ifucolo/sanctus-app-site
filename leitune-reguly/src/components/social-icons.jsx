@@ -48,7 +48,7 @@ export default function SocialIcons({variant}) {
           white: "/images/footer/facebook-red.png",
           black: "/images/footer/facebook-red.png",
         }[variant],
-        href: "https://facebook.com",
+        href: "https://www.facebook.com/leitunereguly/",
       },
       {
         image: {
@@ -61,7 +61,7 @@ export default function SocialIcons({variant}) {
           white: "/images/footer/instagram-red.png",
           black: "/images/footer/instagram-red.png",
         }[variant],
-        href: "https://facebook.com",
+        href: "https://www.instagram.com/leitunereguly/",
       },
       {
         image: {
@@ -74,7 +74,7 @@ export default function SocialIcons({variant}) {
           white: "/images/footer/linkedin-red.png",
           black: "/images/footer/linkedin-red.png"
         }[variant],
-        href: "https://facebook.com",
+        href: "https://www.linkedin.com/company/leitune-reguly-advogados/",
       },
       {
         image: {
@@ -87,7 +87,7 @@ export default function SocialIcons({variant}) {
           white: "/images/footer/medium-red.png",
           black: "/images/footer/medium-red.png",
         }[variant],
-        href: "https://facebook.com",
+        href: "https://medium.com/@leitunereguly",
       },
       {
         image: {
@@ -100,7 +100,7 @@ export default function SocialIcons({variant}) {
           white: "/images/footer/whatsapp-red.png",
           black: "/images/footer/whatsapp-red.png",
         }[variant],
-        href: "https://facebook.com",
+        href: "https://api.whatsapp.com/send?phone=5511977197550",
       }
     ]
   }, [variant]);
