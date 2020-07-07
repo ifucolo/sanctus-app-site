@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import MenuIcon from '@material-ui/icons/Menu';
 import {COLORS, DESKTOP_MENU_SCROLL_TRIGGER} from "@src/services/constants";
 import {useTranslation} from "react-i18next";
-import {PlainButton, StyledButton} from "@src/components/styled";
+import {Close, PlainButton, StyledButton} from "@src/components/styled";
 import NavBar from "@src/components/nav-bar";
 import {containBackground, scrollTo, toPixel} from '@src/services/utils';
 import Modal from "@src/components/modal";
@@ -12,6 +12,7 @@ import TextSection from "@src/components/text-section";
 import {DESKTOP, useResizeListener} from "@src/services/responsive";
 import {useController} from "@src/store/controllers";
 import SmallContactForm from "@src/components/small-contact-form";
+import CloseIcon from "@material-ui/icons/Close";
 
 const Container = styled.section({
   width: '100%',
@@ -197,6 +198,7 @@ export default function MainHeader() {
   const [sticky, setSticky] = useState(false);
 
   const openModal = () => controller.openModal(MODAL_VIDEO);
+  const closeModal = () => controller.closeModal();
 
   function handleScroll() {
     const offset = Math.min(pageYOffset/3, 1000);
@@ -216,15 +218,39 @@ export default function MainHeader() {
   return (
     <Container>
       <Modal name={MODAL_VIDEO}>
-        <iframe
-          title="pitch"
-          src="https://player.vimeo.com/video/347119375?color=ef2200&byline=0&portrait=0"
-          width="100%"
-          height="300"
-          frameBorder="0"
-          allow="autoplay; fullscreen"
-          allowFullScreen
-        />
+        {/* <iframe */}
+        {/*  title="pitch" */}
+        {/*  src="https://player.vimeo.com/video/347119375?color=ef2200&byline=0&portrait=0" */}
+        {/*  width="100%" */}
+        {/*  height="auto" */}
+        {/*  frameBorder="0" */}
+        {/*  allow="autoplay; fullscreen" */}
+        {/*  allowFullScreen */}
+        {/* /> */}
+        {isDesktop && (
+          <iframe
+            title="pitch"
+            src="https://player.vimeo.com/video/435323708?autoplay=1"
+            width="800"
+            height="450"
+            frameBorder="0"
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+        )}
+        {!isDesktop && (
+          <div style={{padding:"177.78% 0 0 0", width: '100%', position:'relative'}}>
+            <iframe
+              title="pitch"
+              src="https://player.vimeo.com/video/435323321?autoplay=1"
+              style={{position:"absolute",top:0,left:0,width:'100%',height:'100%'}}
+              frameBorder="0"
+              allow="autoplay; fullscreen"
+              allowFullScreen
+            />
+          </div>
+        )}
+        <script src="https://player.vimeo.com/api/player.js" />
       </Modal>
       <NavBar />
       <BgContainer ref={bgContainerRef}>

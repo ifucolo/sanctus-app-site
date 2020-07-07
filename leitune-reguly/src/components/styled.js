@@ -30,7 +30,7 @@ export const StyledButton = styled.button({
 
 
 export const Section = styled.section({
-  margin: '20px',
+  margin: '60px 20px',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',

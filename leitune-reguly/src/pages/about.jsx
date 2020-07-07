@@ -78,7 +78,7 @@ export default function About() {
               <Center>
                 <Strong>{t('cnjdata.strong')}</Strong>
               </Center>
-              <Center>
+              <Center style={{width: isDesktop ? '100%' : '240px'}}>
                 <DocumentsCompare />
               </Center>
             </InnerSection>

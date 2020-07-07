@@ -30,13 +30,13 @@ export default class MyDocument extends Document {
           <link rel="icon" href="/favicon.png" />
           <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" />
           <title>Leitune & Reguly Advogados | Escritório virtual</title>
-          <meta name="description" content="Nosso escritório trabalha para melhorar a sua experiência com o direito, combinando conhecimento jurídico e tecnologia para alcançar resultados mais eficientes" />
+          <meta name="description" content="Somos um escritório de advocacia com atendimento a pessoas físicas e jurídicas na parte de consultoria e contencioso. Atuamos nas áreas de direito empresarial, civil, tributário, trabalhista, do consumidor e penal empresarial. Com atendimento 100% online, nosso escritório trabalha para melhorar a sua experiência com o direito, combinando tecnologia e técnicas de design para transmitir a informação jurídica de forma mais clara e alcançar resultados mais rápidos e eficientes." />
           <meta name="robots" content="index, follow" />
           <meta property="og:locale" content="pt_BR" />
           <meta property="og:url" content="https://leitunereguly.com" />
           <meta property="og:title" content="Leitune & Reguly Advogados | Escritório virtual" />
           <meta property="og:site_name" content="Leitune & Reguly Advogados" />
-          <meta property="og:description" content="Nosso escritório trabalha para melhorar a sua experiência com o direito, combinando conhecimento jurídico e tecnologia para alcançar resultados mais eficientes" />
+          <meta property="og:description" content="Somos um escritório de advocacia com atendimento a pessoas físicas e jurídicas na parte de consultoria e contencioso. Atuamos nas áreas de direito empresarial, civil, tributário, trabalhista, do consumidor e penal empresarial. Com atendimento 100% online, nosso escritório trabalha para melhorar a sua experiência com o direito, combinando tecnologia e técnicas de design para transmitir a informação jurídica de forma mais clara e alcançar resultados mais rápidos e eficientes." />
           <meta property="og:image" content="https://leitunereguly.com/images/ogimage.jpeg" />
           <meta property="og:image:type" content="image/jpeg" />
           <meta property="og:image:width" content="1080" />

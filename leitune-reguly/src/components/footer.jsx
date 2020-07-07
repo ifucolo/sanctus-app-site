@@ -67,6 +67,7 @@ const LocationPhone = styled.h4({
   fontWeight: 'normal',
   fontSize: '20px',
   lineHeight: '23px',
+  userSelect: 'all',
   color: COLORS.Gray,
   [DESKTOP]: {
     fontSize: '24px',
@@ -124,11 +125,13 @@ export default function Footer() {
           <SpanEmail>hello@leitunereguly.com</SpanEmail>
         </A>
         {phones.map(phone => (
-          <A href={`tel:${phone.number}`} key={phone.number}>
-            <LocationName>{phone.title}</LocationName>
+          <div>
+            <A href={`tel:${phone.number}`} key={phone.number}>
+              <LocationName>{phone.title}</LocationName>
+            </A>
             <LocationPhone>{phone.number}</LocationPhone>
-          </A>
-      ))}
+          </div>
+        ))}
       </Content>
       <SocialIconsContainer>
         <SocialIcons variant="red" />
