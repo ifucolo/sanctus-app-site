@@ -18,10 +18,11 @@ import {MainSection} from "@src/components/main-section";
 import {useController} from "@src/store/controllers";
 import {useResizeListener} from "@src/services/responsive";
 import Honeycomb from "@src/components/honeycomb";
+import smoothscroll from "smoothscroll-polyfill";
 
 export default function Home() {
   const { t } = useTranslation('body');
-  const [state, { saveScrollOffset }] = useController();
+  const [state, { saveScrollOffset, closeModal }] = useController();
   const { isDesktop } = useResizeListener();
 
   useEffect(() => {

@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 import {COLORS, ZINDEX} from "@src/services/constants";
 import {store} from "@src/store";
 import {ACTION_TYPES} from "@src/store/actions";
-import CloseIcon from '@material-ui/icons/Close';
 import {DESKTOP} from "@src/services/responsive";
+import smoothscroll from "smoothscroll-polyfill";
 
 const Overlay = styled.div(p => ({
   position: 'fixed',
@@ -43,7 +43,22 @@ export default function Modal({children, name}) {
   useEffect(() => {
     setReady(state.modal.open);
     document.getElementsByTagName('body')[0].style.overflow = state.modal.open ? 'hidden' : 'scroll';
-  }, [state.modal.open])
+  }, [state.modal.open]);
+
+  const handleWindowClose = (e) => {
+    console.log('>>>>>>>>>>', state.modal.open);
+    if (state.modal.open) {
+      closeModal();
+    }
+  };
+
+  useEffect(() => {
+    smoothscroll.polyfill();
+    window.addEventListener('popstate', handleWindowClose);
+    return () => {
+      window.removeEventListener('popstate', handleWindowClose);
+    };
+  });
 
   if (!state.modal.open || name !== state.modal.name) {
     return null;

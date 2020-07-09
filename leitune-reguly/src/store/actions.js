@@ -62,6 +62,7 @@ export const OpenModal = {
     return action.type === ACTION_TYPES.OPEN_MODAL;
   },
   execute(state, action) {
+    window.location.hash = `#${action.name.toLowerCase()}`;
     return {
       ...state,
       modal: {
@@ -82,6 +83,7 @@ export const CloseModal = {
     return action.type === ACTION_TYPES.CLOSE_MODAL;
   },
   execute(state, action) {
+    window.location.hash = '';
     return {
       ...state,
       modal: {
