@@ -46,7 +46,6 @@ export default function Modal({children, name}) {
   }, [state.modal.open]);
 
   const handleWindowClose = (e) => {
-    console.log('>>>>>>>>>>', state.modal.open);
     if (state.modal.open) {
       closeModal();
     }

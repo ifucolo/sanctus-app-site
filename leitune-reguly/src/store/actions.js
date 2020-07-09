@@ -83,7 +83,6 @@ export const CloseModal = {
     return action.type === ACTION_TYPES.CLOSE_MODAL;
   },
   execute(state, action) {
-    window.location.hash = '';
     return {
       ...state,
       modal: {
