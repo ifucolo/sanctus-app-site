@@ -84,6 +84,11 @@ const FileLabel = styled.label({
   whiteSpace: 'nowrap',
   overflow: 'hidden',
 
+  [DESKTOP]: {
+    ...defaultStyle[DESKTOP],
+    padding: '18px 6px',
+  },
+
   span: {
     padding: '4px 8px',
     backgroundColor: COLORS.Red,
@@ -130,12 +135,14 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
   const { fieldName, defaultValue, registerField, error, clearError } = useField(name);
 
   useEffect(() => {
-    registerField({
+    const opts = {
       name: fieldName,
       ref: inputRef.current,
-      path: 'value',
-    });
-  }, [fieldName, registerField]);
+      path: type === 'file' ? 'files[0]' : 'value',
+    }
+    registerField(opts);
+    console.log(type, opts);
+  }, [fieldName, registerField, type]);
 
   // useEffect(() => {
   //   if (error) {
@@ -147,7 +154,6 @@ export default function FormInput({ name, type, label, placeholder, size, ...res
 
   function onChange(e) {
     if (type === 'file') {
-      console.dir(e.target);
       const [file] = e.target.files;
       setSelectedFile(file ? file.name : placeholder);
     }

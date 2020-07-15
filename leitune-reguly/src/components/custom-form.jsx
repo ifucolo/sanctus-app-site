@@ -85,14 +85,27 @@ export default function CustomForm({ inputs, onSubmit, showSuccessToast, clearAf
         abortEarly: false,
       });
       await onSubmit(validation);
+      let upload = {};
+      if (data.file) {
+        const formData = new FormData();
+        formData.append('file', data.file);
+        upload = await (await fetch('/api/upload', {
+          method: 'POST',
+          body: formData,
+        })).json();
+      }
+      let file = null;
+      if (upload.files) {
+        file = upload.files.file.path;
+      }
+      await fetch('/api/contact', {
+        method: 'POST',
+        body: JSON.stringify({ ...data, file }),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      })
       if (showSuccessToast) {
-        // dispatch({
-        //   type: ACTION_TYPES.SHOW_TOAST,
-        //   data: {
-        //     type: 'success',
-        //     text: 'Mensagem enviada.'
-        //   }
-        // });
         setFeedback({
           visible: true,
           message: size === 'small' ? 'Obrigado!' : 'Obrigado. Entraremos em contato em breve.',

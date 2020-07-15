@@ -10,7 +10,7 @@ if (error) {
 
 const next = {
   enablesvg: true,
-  pageExtensions: ['mdx', 'jsx', 'ts', 'tsx'],
+  pageExtensions: ['mdx', 'jsx', 'ts', 'tsx', 'js'],
   webpack: (config, { dev }) => {
     config.plugins.push(new webpack.EnvironmentPlugin(localEnv));
     // if (dev) {

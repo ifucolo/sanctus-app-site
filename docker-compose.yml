@@ -21,3 +21,5 @@ services:
     build:
       context: leitune-reguly
       dockerfile: Dockerfile
+    volumes:
+    - ./volumes/uploads:/srv/app/uploads

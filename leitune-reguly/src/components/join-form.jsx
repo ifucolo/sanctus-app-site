@@ -40,7 +40,7 @@ export default function JoinForm() {
       label: t('form.file.label'),
       placeholder: t('form.file.placeholder'),
       accept: 'application/pdf',
-      schema: Yup.object().nullable(true).optional(),
+      schema: Yup.mixed().optional(),
     },
     {
       name: 'message',
