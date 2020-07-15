@@ -264,11 +264,11 @@ export default function MainHeader() {
                 bold
                 large
               />
-              <PlayTitle onClick={openModal}>
-                <PlayIcon className="play-icon" />
-                <span className="text" dangerouslySetInnerHTML={{__html: t('play')}} />
-              </PlayTitle>
-              {!isDesktop && <StyledButton onClick={scrollTo('contact')} type="button">{t('button')}</StyledButton>}
+              {/*<PlayTitle onClick={openModal}>*/}
+              {/*  <PlayIcon className="play-icon" />*/}
+              {/*  <span className="text" dangerouslySetInnerHTML={{__html: t('play')}} />*/}
+              {/*</PlayTitle>*/}
+              {!isDesktop && <StyledButton style={{marginTop: 50}} onClick={scrollTo('contact')} type="button">{t('button')}</StyledButton>}
             </div>
             {isDesktop && (
               <Card>
